@@ -22,6 +22,7 @@ public class RemoveDuplicateTest {
 		Assert.assertArrayEquals(expected, actual);
 	}
 	
+	//when all elements of array are same
 	@Test
 	public void testAllSameElements(){
 		int[] input = {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2};
@@ -32,11 +33,13 @@ public class RemoveDuplicateTest {
 		Assert.assertArrayEquals(expected, actual);
 	}
 	
+	//test null array
 	@Test(expected = NullPointerException.class)
 	public void testForNull(){
 		duplicate_element.removeDuplicate(null);
 	}
 	
+	//when array is empty
 	@Test
 	public void testForBlank(){
 		int[] input = {};
@@ -47,6 +50,7 @@ public class RemoveDuplicateTest {
 		
 	}
 	
+	//testing for a random number of duplicates
 	@Test
 	public void testForCase(){
 		int[] input = {1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 5, 4, 3, 2, 1};
