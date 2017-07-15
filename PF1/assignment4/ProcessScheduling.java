@@ -17,30 +17,21 @@ public class ProcessScheduling {
 	}
 	 
 	public int[][] FCFS( int arrival_time[], int job_size[] ) {
-		int i,j,start_time=1;
+		int start_time=1, total_finish_time=0;
 		int result_array[][]=new int[arrival_time.length][5];
 	 
-		for(i=0,j=0;i<arrival_time.length;i++){
-			result_array[i][j]=i+1;
-		}
-	 
-		result_array[0][1]=arrival_time[0];
-		result_array[0][2]=start_time-arrival_time[0];
-		result_array[0][3]=arrival_time[0];
-		result_array[0][4]=job_size[0]+result_array[0][3]-1;
-	 
-		for(i=1;i< arrival_time.length ;i++){
-			if(result_array[i-1][4]<arrival_time[i]){
-				result_array[i][1]=arrival_time[i];
-				result_array[i][3]=arrival_time[i];
-				result_array[i][2]=0;
-				result_array[i][4]=job_size[i]+result_array[i][3]-1;
-			}else{
-				result_array[i][1]=arrival_time[i];
-				result_array[i][3]=result_array[i-1][4]+1;
-				result_array[i][4]=job_size[i]+result_array[i][3]-1;
-				result_array[i][2]=result_array[i][3]-result_array[i][1];
+		for(int i=1;i< arrival_time.length ;i++){
+			result_array[i][0] = i+1;				//Assign Process id no
+			result_array[i][1] = arrival_time[i];			//Arrival time of each process
+			if(total_finish_time < arrival_time[i]){		//if new process arrives after running process completes
+				result_array[i][2] = 0;				//   then no waiting time and process starts at same time
+				result_array[i][3] = arrival_time[i];		
+			}else{							//else process waits for process to finish
+				result_array[i][2] = total_finish_time + arrival_time[i];
+				result_array[i][3] = total_finish_time + 1;
 			}
+			total_finish_time += job_size[i] + result_array[i][3];	
+			result_array[i][4] = total_finish_time;			//finish time of a process
 		}
 		return result_array;	
 	}
