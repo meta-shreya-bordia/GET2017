@@ -6,14 +6,10 @@ package assignment5;
  * */
 public class CheckArraySorting {	
 	public int checkSortArray(int[] a){
-		try {
-			if(a==null)
-				throw new NullPointerException();
-			if(a.length <= 0)
-				throw new ArrayIndexOutOfBoundsException();
-		}catch(Exception e) {
-			
-		}
+		if(a==null)
+			throw new NullPointerException();
+		if(a.length <= 0)
+			throw new ArrayIndexOutOfBoundsException();
 				
 		/*check for ascending */
 		int i=0;
@@ -45,7 +41,7 @@ public class CheckArraySorting {
 		
 		
 		
-/**		
+/**		Another algorithm
 		int type_of_sort =0;
 		boolean flag_asc =false, flag_dsc = false;
 		int l = a.length;
