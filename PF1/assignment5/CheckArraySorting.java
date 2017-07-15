@@ -37,9 +37,7 @@ public class CheckArraySorting {
 			
 		return 0;
 		}
-}		
-		
-		
+}			
 		
 /**		Another algorithm
 		int type_of_sort =0;
