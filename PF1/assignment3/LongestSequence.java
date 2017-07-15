@@ -4,17 +4,13 @@ package assignment3;
 public class LongestSequence {
 	
 	/* store length of last longest occurring subsequence
-	 * compare with every ending sub-sequence
+	 * and compare every new sequence length
 	 * */
 	public int[] longestSequence(int[] input){
-		try {
-			if(input.length <0)
-				throw new ArrayIndexOutOfBoundsException();
-		}catch(ArrayIndexOutOfBoundsException e) {
-			e.printStackTrace();
-		}
+		if(input.length <0)
+			throw new ArrayIndexOutOfBoundsException();
 		
-		if(input.length <=1) 
+		if(input.length ==1) 
 			return input;
 		
 		int[] tmp= new int[input.length];
@@ -45,7 +41,7 @@ public class LongestSequence {
 		}
 		
 		/* Case: when i==length
-		 * for ending subsequence
+		 * for sequence extending to end of string
 		 */
 		end_marker = i;
 		int len_seq = end_marker - start_marker+1;
