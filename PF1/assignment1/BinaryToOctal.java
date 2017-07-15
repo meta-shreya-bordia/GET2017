@@ -3,15 +3,11 @@ package assignment1;
 //convert binary number to octal format
 public class BinaryToOctal {
 	int convertBinaryToOctal(int n){
-		try{
-			int no= n;
-			while(no > 10) {
-				if(no%10 != 0 | no%10 != 1){
-					throw new Exception();
-				}
+		int no= n;
+		while(no > 10) {
+			if(no%10 != 0 | no%10 != 1){
+				throw new Exception();
 			}
-		}catch(Exception e){
-			e.printStackTrace();
 		}
 		return convertToOctal(convertToDecimal(n));
 	}
