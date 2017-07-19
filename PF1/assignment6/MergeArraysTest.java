@@ -1,7 +1,7 @@
 package assignment6;
 import org.junit.*;
 
-public class TestAssignment{
+public class MergeArraysTest{
 
 	MergeArrays merger;
 	
@@ -9,6 +9,8 @@ public class TestAssignment{
 	public void setUp(){
 		merger = new MergeArrays();
 	}
+
+/** Positive Test cases*/
 	// 2 ascending arrays
 	@Test
 	public void testAscendingArray(){
@@ -44,7 +46,8 @@ public class TestAssignment{
 		// merge array a and b (sorted) into c in sorted manner
 		Assert.assertArrayEquals(expected, merger.join(a, a.length, b, b.length, c));
 	}
-	
+
+/** Negative cases*/
 	//null array
 	@Test(expected = NullPointerException.class)
 	public void testForNullArray(){

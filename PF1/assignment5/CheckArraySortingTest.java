@@ -9,6 +9,7 @@ public class CheckArraySortingTest {
 		classify = new CheckArraySorting();
 	}
 	
+/** Positive Test Cases: */
 	//Ascending sorted
 	@Test
 	public void testAscSort(){
@@ -29,21 +30,7 @@ public class CheckArraySortingTest {
 	//Unsorted
 	@Test
 	public void testUnsort(){
-		int[] input = {8, 9, 0, 3, 7, 1, 14, 45, 9};
-		//classified as unsorted
-		Assert.assertEquals("Array is unsorted", 0, classify.checkSortArray(input));
-	}
-	
-	//Exception raised
-	@Test(expected = NullPointerException.class)
-	public void testNull(){
-		classify.checkSortArray(null);
-	}
-	
-	// blank is Unsorted 
-	@Test(expected = ArrayIndexOutOfBoundsException.class)
-	public void testBlank(){
-		int[] input = {};
+		int[] input = {8, 9, 0, 3, 7, 6, 14, 45, 9};
 		//classified as unsorted
 		Assert.assertEquals("Array is unsorted", 0, classify.checkSortArray(input));
 	}
@@ -54,5 +41,20 @@ public class CheckArraySortingTest {
 		int[] input = {5,5,5,5,5,5,5,5,5,5,5,5,5,5};
 		//classified as ascending sorted
 		Assert.assertEquals("Array in ascending sorted order", 1, classify.checkSortArray(input));
+	}
+	
+/** Negative Test Cases*/
+	//Exception raised
+	@Test(expected = NullPointerException.class)
+	public void testNull(){
+		classify.checkSortArray(null);
+	}
+		
+	// blank is Unsorted 
+	@Test(expected = ArrayIndexOutOfBoundsException.class)
+	public void testBlank(){
+		int[] input = {};
+		//classified as unsorted
+		Assert.assertEquals("Array is unsorted", 0, classify.checkSortArray(input));
 	}
 }

@@ -46,7 +46,7 @@ public class LongestSequenceTest {
 		int[] input = {4};
 		int[] expected= {4};
 		int[] actual = find_sequence.longestSequence(input);
-		
+		// compare arrays of equal length and elements
 		Assert.assertArrayEquals(expected, actual);
 	}
 	
@@ -55,12 +55,14 @@ public class LongestSequenceTest {
 		int[] input = {};
 		int[] expected= {};
 		int[] actual = find_sequence.longestSequence(input);
-		
+		// compare arrays of equal length and elements
 		Assert.assertArrayEquals(expected, actual);
 	}
 	
+	// Finding a sequence when no array is passed
 	@Test(expected = NullPointerException.class)
 	public void testForNull(){
 		find_sequence.longestSequence(null);
 	}
 }
+

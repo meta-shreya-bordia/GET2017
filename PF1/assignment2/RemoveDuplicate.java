@@ -1,12 +1,18 @@
 package assignment2;
 
-// find unique elements of an array
+/** 
+ * find unique elements of an array
+ */
 public class RemoveDuplicate {
 	
-	/* Replace each repeating element with
+	/** Replace each repeating element with
 	 * maximum possible integer size 
 	 * */
 	public int[] removeDuplicate(int[] n) {
+		if(n == null)
+			throw new NullPointerException();
+		
+		// Replace repeating element with an extremely large value
 		int[] tmp= new int[n.length];			
 		int k=0;
 		final int MAX = Integer.MAX_VALUE;
@@ -28,6 +34,7 @@ public class RemoveDuplicate {
 			for(int i=0; i<k; i++){
 			out[i]= tmp[i];
 		}
+		
 		return out; 
 	}
 }

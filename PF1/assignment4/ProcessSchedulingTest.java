@@ -8,7 +8,8 @@ public class ProcessSchedulingTest {
 	public void setUp(){
 		process = new ProcessScheduling();
 	}
-	
+
+/** Positive Cases: */
 	//Normal Case: processes with different arrival time
 	@Test
 	public void testDifferentArrivalTime(){
@@ -21,7 +22,7 @@ public class ProcessSchedulingTest {
 							{4, 25, 0, 25, 29}
 							};
 		// return if expected 2D is equal to actual 2D
-		Assert.assertFalse(process.isArrayEqual(expected, process.FCFS(arrival_time, job_size)));
+		Assert.assertEquals(true, process.isArrayEqual(expected, process.FCFS(arrival_time, job_size)));
 	}
 
 	// when process arrives before CPU starts
@@ -37,7 +38,7 @@ public class ProcessSchedulingTest {
 							{5, 25, 1, 27, 31}
 							};		
 		// return if expected 2D is equal to actual 2D
-		Assert.assertFalse(process.isArrayEqual(expected, process.FCFS(arrival_time, job_size)));
+		Assert.assertEquals(true, process.isArrayEqual(expected, process.FCFS(arrival_time, job_size)));
 	}
 	
 	// when 2 processes arrive at same time
@@ -51,6 +52,6 @@ public class ProcessSchedulingTest {
 							{3, 5, 12, 28, 25},
 							};
 		// return if expected 2D is equal to actual 2D
-		Assert.assertFalse(process.isArrayEqual(expected, process.FCFS(arrival_time, job_size)));
+		Assert.assertEquals(true, process.isArrayEqual(expected, process.FCFS(arrival_time, job_size)));
 	}
 }
