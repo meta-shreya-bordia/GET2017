@@ -12,24 +12,18 @@ RecursiveRemainder remainder;
 
 //Positive Test Cases:
 	
-	/** When two numbers are relatively prime*/
+	/** When divident is larger than divisor*/
 	@Test
-	public void testForCoPrimeNumbers(){
-		Assert.assertEquals(1, remainder.rem(2, 1));
+	public void testForLargerDivident(){
+		Assert.assertEquals(0, remainder.rem(2, 1));
 	}
 	
-	/** When 2 numbers have a common factor between them*/
+	/** When divisor is larger than divident*/
 	@Test
-	public void testForCommonFactor(){
-		Assert.assertEquals(6, remainder.rem(12,18));
+	public void testForSmallDividend(){
+		Assert.assertEquals(12, remainder.rem(12,18));
 	}
-	
-	/** 2 Prime numbers that have factors only as the number themselves*/
-	@Test
-	public void testForPrimeNumbers(){
-		Assert.assertEquals(1, remainder.rem(101, 3));
-	}
-	
+
 	/** When dividend is zero */
 	@Test
 	public void testDividendAsZero(){
