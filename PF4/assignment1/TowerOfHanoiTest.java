@@ -10,6 +10,7 @@ public class TowerOfHanoiTest {
 	TowerOfHanoi disk_moves;
 	List<String> expected;
 	
+	/** Initalizing object common for each test case*/
 	@Before
 	public void setUp() {
 		disk_moves = new TowerOfHanoi();
@@ -20,11 +21,10 @@ public class TowerOfHanoiTest {
 	//Base Condition: To move only one element from source to destination
 	@Test
 	public void testForDirectMoveToDestination() {
-		String[] moves = {
-				"Move Disk 1 from A to B",
-											};	
+		String[] moves = {"Move Disk 1 from A to B"
+				 };	
 		expected.addAll(Arrays.asList(moves));
-		
+		// compare expected nmber of moves and disk actual movements
 		Assert.assertEquals(expected, disk_moves.towerOfHanoi("A", "B", "C", 1));
 	}
 
@@ -39,10 +39,10 @@ public class TowerOfHanoiTest {
 				"Move Disk 1 from C to C",
 				"Move Disk 2 from C to B",
 				"Move Disk 1 from C to B"
-											};
+							};
 		
 		expected.addAll(Arrays.asList(moves));
-		
+		// compare expected nmber of moves and disk actual movements
 		Assert.assertEquals(expected, disk_moves.towerOfHanoi("A", "B", "C", 3));
 	}
 
