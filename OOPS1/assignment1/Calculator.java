@@ -1,5 +1,10 @@
 package assignment1;
 
+/**@Class	Calculator
+* user interface (layout) class calls the calculator
+* for operating on appropriate operation
+* by calling operations and sending result to display class
+**/
 public class Calculator {
 	protected int result;
 	protected int firstNumber;
@@ -36,8 +41,6 @@ public class Calculator {
 	 * */
 	public void displayResult() {
 		Display printResult = new Display();
-		
-		printResult.displayOutput(calculate());
-		
+		printResult.displayOutput(calculate());	
 	}
 }
