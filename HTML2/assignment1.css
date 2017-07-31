@@ -1,0 +1,43 @@
+body{
+  background-color: #E0FFFF;
+  margin: 1%;
+  margin-top: 2%;
+  }
+
+div#main{
+  height: 90%;
+  background-color: white;
+  padding: 1%;
+}
+
+div#header{
+  background-color: #F0FFFF;
+  height: 50px;
+
+  padding: 10px;
+  border: thin solid #00BFFF;
+
+  color: #00BFFF;
+  font-size: 32;
+  font-weight: bold;
+}
+
+div#image{
+  height: 37%;
+  width:  14%;
+
+  background-color: black;
+  border-style: outset;
+
+  margin-top: 1%;
+  float:left;
+}
+
+div#data{
+  height: 50%;
+  width:  40%;
+
+  margin: 1%;
+  margin-left: 2%;
+  float:left;
+}
