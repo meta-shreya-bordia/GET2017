@@ -1,28 +1,93 @@
 <html>
-  <head><link rel="stylesheet" type="text/css" href="assignment2.css"></head>
-
-  <body>
-    <div id="main">
-      <div id="header">Enter Site Title<br>Enter Site Slogan</div>
-
-      <div id="menu">
-        <input type="button" id="NewPage" value="New Page" />
-        <input type="button" id="NewPage2" value="New Page 2" />
-      </div>
-
-      <div id="content">
-        <div id="vertical_menu">
-          <div class="blue_display">Vertical Menu</div>
-          <div>New Page</div>
-          <div>New Page 2</div>
-          <div class="blue_display">New Block</div>
-          <div>Enter Block content here ...
-            <br>Lorem ipsum dolor sit amet, consectuer
-          </div>
-        </div>
-        <div id="new_menu"></div>
-        <div id="search_menu"></div>
-      </div>
-    </div>
-  </body>
+	<head>
+		<link rel="stylesheet" type="text/css" href="assignment2.css">
+	</head>
+	<body>
+		<div class="mainContainer">
+			<!-- div containing heading and slogan of the page -->
+			<div id="mainHeader">
+				<div id="heading">Enter Site Title</div>
+				<div id="slogan">Enter Site Slogan</div>
+			</div>
+			<nav> <!-- Navigational links -->
+				<a href="" class="navLinks active">New Page</a>
+				<a href="" class="navLinks">New Page 2</a>
+			</nav>
+			<div class="mainContent">
+				<!-- div for left side of content of the page -->
+				<div class="leftbar">
+					<div class="box">
+						<div class="verticalBoxHeader">Vertical Menu</div>
+						<div class="menuList">
+							<div class="menuItem activeItem">New Page</div>
+							<div class="menuItem">New Page 2</div>
+						</div>
+					</div>
+					<div class="box" >
+						<div class="boxHeader">New Block</div>
+						<div class="text">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo conse. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sinorat occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</div>
+					</div>
+				</div>
+				<!-- div for middle content of the page -->
+				<div class="midContent">
+					<h1>New Page</h1>
+					Enter page Content Here
+					<img src="coding.jpg" id="image"/>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo conse. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sinorat occaecat cupidat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+					<p>
+						Labore quis sed do dolor reprehenderit nulla excepteur sint est esse cupidatat aute sed anim velit excepteur eiusmod cupidatat dolore ut in laborum ea adipisicing do. Cillum aliquip minim ad tempor duis incididunt pariatur ullamco duis eu consequat in culpa consequat culpa commodo cillum nulla officia non sunt velit eiusmod ut est ad ad in. Lorem ipsum adipisicing duis sunt in sed ullamco velit commodo esse excepteur commodo nulla excepteur ullamco nisi nulla do proident dolor eu excepteur consequat nisi culpa pariatur velit nulla duis ea exercitation do tempor cillum commodo enim cillum ea exercitation.
+					</p>
+				</div>
+				<!-- div for right side of content of the page -->
+				<div class="rightbar">
+					<div class="box">
+						<div class="boxHeader">Search</div>
+						<div class="searchBox">
+							<input type="search" class="searchBox" />
+							<button class="button">Search</button>
+						</div>
+					</div>
+					<div class="box">
+						<div class="boxHeader">Categories</div>
+						<div class="text">
+							Consequat sint exercitation nostrud excepteur.
+							<ul>
+								<li><a href="#">All News (50)			 </a></li>
+								<li><a href="#">Best of the year(4)</a></li>
+								<li><a href="#">Hyperlink(24)			 </a></li>
+								<li><a href="#">Visited Link(17)	 </a></li>
+								<li><a href="#">Hovered Link(6)		 </a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="box">
+						<div class="boxHeader">Archives</div>
+						<div class="text">
+							<ul>
+								<li><a href="#">November 2008	</a></li>
+								<li><a href="#">October 2009	</a></li>
+								<li><a href="#">September 2010</a></li>
+								<li><a href="#">June 2011			</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="box">
+						<div class="boxHeader"></div>
+					</div>
+				</div>
+			</div>
+			<!-- div for footer of the page -->
+			<div id="footer">
+					<div><a href="">Link 1|</a>
+					 	 	 <a href="">Link 2|</a>
+						   <a href="">Link 3 </a>
+					 </div>
+				<div style="color: grey">&copy;Copyright 2016-2017. All right reserved.</div>
+			</div>
+		</div>
+	</body>
 </html>
