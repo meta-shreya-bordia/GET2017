@@ -1,0 +1,34 @@
+<html>
+
+	<head>
+		<title>halfColoredCircle</title>
+	</head>
+	
+	<body>
+	
+		<canvas id="halfColoredCircle" height="350px" width="350px">
+		
+			<script>
+			var c=document.getElementById('halfColoredCircle');
+			var ct=c.getContext('2d');
+			ct.beginPath();
+			ct.arc(200,200,60,0,2*Math.PI);
+			ct.fillStyle="#989C9D";
+			ct.fill();
+
+			ct.beginPath();
+			ct.arc(200,200,55,0,2*Math.PI);
+			ct.fillStyle="white";
+			ct.fill();
+
+			ct.beginPath();
+			ct.arc(200,200,60,0.5*Math.PI,1.5*Math.PI);
+			ct.fillStyle="#2E94D1";
+			ct.fill();
+			</script>
+			
+		</canvas>
+		
+	</body>
+	
+  </html>

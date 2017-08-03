@@ -1,0 +1,34 @@
+<html>
+
+	<head>
+		<title>plus</title>
+	</head>
+	
+	<body>
+	
+		<canvas id="plus" height="350px" width="350px">
+		
+			<script>
+				var c=document.getElementById('plus');
+				var ct=c.getContext('2d');
+				ct.beginPath();
+				ct.arc(200,200,60,0,2*Math.PI);
+				ct.fillStyle="#FCB03C";
+				ct.fill();
+
+				ct.beginPath();
+				ct.rect(190,150,20,100);
+				ct.fillStyle="white";
+				ct.fill();
+
+				ct.beginPath();
+				ct.rect(150,190,100,20);
+				ct.fillStyle="white";
+				ct.fill();
+			</script>
+			
+		</canvas>
+		
+	</body>
+	
+</html>
