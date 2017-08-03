@@ -1,4 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  id="half_circle" width="400px" height="400px">
-  <circle cx="100px" cy="100px" r="60px" fill="blue" />
-  <path d="M100 42 A58 58 180 0 1 100 158" fill="white" stroke="grey" stroke-width="4"/>
-</svg>
