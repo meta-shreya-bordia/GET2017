@@ -1,0 +1,28 @@
+<html>
+
+  <head>
+		<title>hollow Circle</title>
+  </head>
+  
+  <body>
+  
+		<canvas id="hollowCircle" height="350px" width="350px">
+		
+			<script>
+				var c=document.getElementById('hollowCircle');
+				var ct=c.getContext('2d');
+				ct.beginPath();
+				ct.arc(200,200,60,0,2*Math.PI);
+				ct.fillStyle="#982068";
+				ct.fill();
+
+				ct.beginPath();
+				ct.arc(200,200,50,0,2*Math.PI);
+				ct.fillStyle="white";
+				ct.fill();
+			</script>
+		</canvas>
+		
+	</body>
+	
+</html>
