@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>Local Storage</title>
+		<script>
+			
+			
+			function getStore() {
+				var msg=document.getElementById('msg');
+				msg.innerHTML = localStorage.getItem('key1');
+			}
+			function saveStore() {
+				var text = document.getElementById('textbox').value;
+				localStorage.setItem("key1",text);
+			}
+		</script>
+	</head>
+	
+	<body>
+		<p id="msg"> Hello </p>
+		<input type="text" placeholder="Enter value" id="textbox"/><br>
+		<input type="button" value = "Save" onClick="saveStore()"/><br><br>
+		
+		<input type="button" value = "getLocalStorage" onClick="getStore()"/>
+	</body>
+	
+</html>

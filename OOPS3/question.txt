@@ -1,6 +1,0 @@
-Overall Rating, Single Select, (1/2/3/4/5)
-Other Rating, Single Select, (1/2/3/4/5/6)
-Area of improvement, Multi Select, (Service Quality/Communication/Delivery Process)
-Work progress, Text
-No of person enrolled, Number
-Feedback, Text
