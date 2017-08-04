@@ -1,0 +1,121 @@
+<html>
+    <head>
+      <title>Contact Us</title>
+      <link rel="stylesheet" type="text/css" href="assignment1-stylee.css"></link>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+      <header><h2>Contact Us Today!</h2></header>
+<form>
+      <div class="container">
+        <div class= "nameDetails">
+          <span class="avs"><label>First Name</label></span>
+          <span>
+                <i class="fa fa-user"></i><input type="text" placeholder="First Name" pattern="[A-Za-z]{1,}"
+  					title="Please enter only text."required></input>
+          </span>
+      </div>
+
+      <div class= "nameDetails">
+        <span class="avs"><label>Last Name</label></span>
+          <span>    <i class="fa fa-user"></i><input type="text" placeholder="Last Name" pattern="[A-Za-z]{1,}"
+          title="Please enter only text."required></input>
+        </span>
+    </div>
+
+    <div class= "nameDetails">
+      <span class="avs"><label>Email</label></span>
+        <span>    <i class="fa fa-envelope"></i><input type="text" placeholder="E-Mail Address" pattern="[a-z0-9._]+@[a-z0-9.-]+.[a-z]{2,3}"
+        title="Please enter valid email id."required></input>
+      </span>
+  </div>
+
+  <div class= "nameDetails">
+    <span class="avs"><label>Phone #</label></span>
+    <span><i class="fa fa-phone" ></i><input type="text" placeholder="(845)555-1212" pattern="[\(][7-9]{1}\d{2}[\)]\d{3}[\-]\d{4}"
+      title="Please enter valid phone number."required></input>
+    </span>
+</div>
+
+<div class= "nameDetails">
+  <span class="avs"><label>City</label></span>
+  <span>
+    <i class="fa fa-home"></i><input type="text" placeholder="City" pattern="[A-Za-z]{1,}" title="Please enter only text." required></input>
+  </span>
+</div>
+
+<div class="nameDetails">
+					<span><label>State</label></span>
+          <span><i class="fa fa-list"></i><select name=slist required>
+					<option value="" disabled selected hidden id="first" style="color:#D9D9D9">Please select your state</option>
+						<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+						<option value="Andhra Pradesh">Andhra Pradesh</option>
+						<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+						<option value="Assam">Assam</option>
+						<option value="Bihar">Bihar</option>
+						<option value="Chandigarh">Chandigarh</option>
+						<option value="Chhattisgarh">Chhattisgarh</option>
+						<option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+						<option value="Daman and Diu">Daman and Diu</option>
+						<option value="Delhi">Delhi</option>
+						<option value="Goa">Goa</option>
+						<option value="Gujarat">Gujarat</option>
+						<option value="Haryana">Haryana</option>
+						<option value="Himachal Pradesh">Himachal Pradesh</option>
+						<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+						<option value="Jharkhand">Jharkhand</option>
+						<option value="Karnataka">Karnataka</option>
+						<option value="Kerala">Kerala</option>
+						<option value="Lakshadweep">Lakshadweep</option>
+						<option value="Madhya Pradesh">Madhya Pradesh</option>
+						<option value="Maharashtra">Maharashtra</option>
+						<option value="Manipur">Manipur</option>
+						<option value="Meghalaya">Meghalaya</option>
+						<option value="Mizoram">Mizoram</option>
+						<option value="Nagaland">Nagaland</option>
+						<option value="Orissa">Orissa</option>
+						<option value="Pondicherry">Pondicherry</option>
+						<option value="Punjab">Punjab</option>
+						<option value="Rajasthan">Rajasthan</option>
+						<option value="Sikkim">Sikkim</option>
+						<option value="Tamil Nadu">Tamil Nadu</option>
+						<option value="Tripura">Tripura</option>
+						<option value="Uttaranchal">Uttaranchal</option>
+						<option value="Uttar Pradesh">Uttar Pradesh</option>
+						<option value="West Bengal">West Bengal</option>
+						</select></span>
+				</div>
+
+        <div class="nameDetails">
+					<span class="avs"><label>Zip Code</label></span><span><i class="fa fa-home"></i><input type="text" placeholder="Zip Code"  title="enter number only.it should be between 6 to 8 digit" pattern="[0-9]{6,8}" required></input></span>
+				</div>
+
+        <div class="nameDetails">
+				<span class="avs"><label>Website or domain name</label></span><span class="spa"><i class="fa fa-globe"></i><input type="url" placeholder="Website or domain name" required></input></span>
+				</div>
+
+        <div id="hosting">
+				<div class="avss"><label >Do you have hosting?</label></div>
+					<div class="radio">
+						  <div class="radio-options" style="border:none;">
+							<input  type="radio" name="hosting" value="yes"  checked />Yes
+						  </div>
+						  <div class="radio-options">
+							<input  type="radio" name="hosting" value="yes" />No
+						  </div>
+					</div>
+				</div>
+
+
+
+        <div class="nameDetails">
+				<span class="avs"><label >Project Description</label></span>
+					<span ><i  class="fa fa-pencil" style="padding:3%; padding-top:9%;padding-bottom:1%;text-align:center;"></i><textarea id="textarea" placeholder="Project Description" rows="3" required></textarea>
+					</span>
+				</div>
+				<div id="button"><button type="submit">Send<i class="fa fa-paper-plane" style="border:none;"></i></button></div>
+      </div>
+    </form>
+   </body>
+
+</html>
