@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>ContactUs</title>
+    </head>
+  <body>
+    <table id="header" align="center" height="10%" width="90%">
+      <tr>
+        <td  width="97%"><img src="HTML logo.png" height="50px" width="50px" onclick="goToThisPage('Home.html')"/></td>
+
+        <td align="right"><a onclick="goToThisPage('Home.html')">Home</a></td>
+        <td align="right"><a onclick="goToThisPage('About.html')">About</a></td>
+        <td align="right"><a onclick="goToThisPage('Product.html')">Product</a></td>
+        <td align="right"><a onclick="goToThisPage('Gallery.html')">Gallery</a></td>
+        <td align="right"><a onclick="goToThisPage('ContactUs.html')">Contact</a></td>
+
+      </tr>
+    </table>
+
+      <hr>
+
+    <table id="cover_img" align="center" height="40%" width="90%">
+      <tr>
+        <td align="center"><img src="contact_us_banner1.jpg" height="40%" width="100%"></td>
+      </tr>
+    </table>
+
+    <br><br>
+
+    <table align="center" height="30%" width="30%">
+      <tr><td>Name</td>             <td><input type="text" id="u_name"  onkeyup="testUserName()"></td></tr>
+      <tr><td>Email</td>            <td><input type="text" id="u_email" onkeyup="testEmail()"></td></tr>
+      <tr><td>City</td><td><select id="state" onblur="testOption()">
+                            <option value="Ajmer">Ajmer</option>
+                            <option value="Bhilwara">Bhilwara</option>
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Udaipur">Udaipur</option>
+                        </select></td></tr>
+      <tr><td>Organisation Name</td>  <td><input type="text" id="u_org" onkeyup="testOrganisationName()"></td></tr>
+      <tr><td>Contact Number</td>     <td><input type="text" id="u_number" onkeyup="testContactNumber()"></td></tr>
+      <tr><td>Message</td>            <td><textarea name="textarea" cols="22" rows="2" onblur="testMessage()"></textarea></td></tr>
+
+      <tr><td colspan ="2" align="center"><input type ="submit" name="submit" value="Submit" onclick="testForm()"></td></tr>
+    </table>
+
+    <br><hr>
+    <table id="footer" align ="center" height="2%" width="90%">
+      <tr>
+        <td align="center"><p style="color: grey">@ Copyright 2016-17 | All Rights Reserved | Metacube Training</p></td>
+      </tr>
+    </table>
+  </body>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="LinkPage.js"></script>
+<script src="Validate.js"></script>
+</html>
