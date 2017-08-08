@@ -1,0 +1,27 @@
+div{
+  height: 100px;
+  width: 100px;
+
+  background-color: blue;
+  margin: 5%;
+  float: left;
+
+  transition: 0.5s;
+}
+
+#rotate:hover{
+  transform: rotate(360deg);
+
+}
+
+#scale:hover{
+    transform: scale(2, 3);
+}
+
+#skew:hover{
+  transform: skew(20deg, 0deg);
+}
+
+#translate:hover{
+  transform: translate(20px, 10px);
+}
