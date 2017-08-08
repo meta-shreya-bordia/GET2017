@@ -1,0 +1,25 @@
+#####################################################
+
+YOUR ORDER :
+
+#####################################################
+
+
+PURCHASED PRODUCTS :
+Product	: 1001
+Cost	: 2247.0(3 x 749.0)
+Product	: 2004
+Cost	: 3149.0(1 x 3149.0)
+APPLIED PROMOTIONS/DISCOUNTS :
+Promotion: 100.0 off on  Reebok Sneakers [Code: 1001]
+Discount : 300.0
+Promotion: 350.0 off on  UCB Jeans (Black) [Code: 2004]
+Discount : 350.0
+Promotion: 10.0 off on orders above 1500.0
+Discount : 474.6
+
+Sub Total:		5396.0
+Product Level Discounts:650.0
+Order Level Discounts:	474.6
+Total Discounts: 	1124.6
+Total: 			4271.40
