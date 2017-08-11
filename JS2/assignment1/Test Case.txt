@@ -1,0 +1,24 @@
+var sll = new SinglyLinked();
+undefined
+sll.addAtStartOfList(1);
+Node {data: 1, next: null}
+sll.appendToList(2);
+Node {data: 1, next: Node}
+sll.addToPositionInList(20, -6);
+SinglyLinkedList.js:58 Error: Invalid position
+    at SinglyLinked.addToPositionInList (SinglyLinkedList.js:55)
+    at <anonymous>:1:5
+Node {data: 20, next: null}data: 20next: null__proto__: Object
+sll.addToPositionInList(5, 100);
+SinglyLinkedList.js:73 Error: Index Out Of Bounds Exception
+    at SinglyLinked.addToPositionInList (SinglyLinkedList.js:70)
+    at <anonymous>:1:5
+Node {data: 20, next: null}
+sll.addToPositionInList(90, 1);
+Node {data: 20, next: null}data: 20next: null__proto__: Object
+JSON.stringify(sll);
+"{"head":{"data":1,"next":{"data":90,"next":{"data":2,"next":{"data":5,"next":null}}}},"length":0}"
+sll.removeElement(5);
+Node {data: 1, next: Node}
+JSON.stringify(sll);
+"{"head":{"data":1,"next":{"data":90,"next":{"data":2,"next":null}}},"length":0}"

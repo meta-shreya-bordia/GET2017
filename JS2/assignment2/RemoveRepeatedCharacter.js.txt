@@ -1,0 +1,30 @@
+/**
+function to remove consececutie element from the string
+*/
+function removeConsecutiveElement(inputString){
+  var previousPosition=0;
+	var currentPosition=0;
+  var differneceInPosition=0;
+  if(!inputString){
+    console.log("invalid String");
+    return;
+  }
+  while(currentPosition != inputString.length+1){
+    if(inputString.charAt(previousPosition).toUpperCase() == inputString.charAt(currentPosition).toUpperCase()){
+      currentPosition++;
+      differneceInPosition++;
+    }
+    else if (differneceInPosition>1) {
+      inputString=inputString.slice(0,previousPosition)+inputString.slice(currentPosition,inputString.length+1);
+      previousPosition=previousPosition-1>0?previousPosition-1:0;
+      currentPosition=previousPosition;
+      differneceInPosition=0;
+    }
+    else{
+      previousPosition=previousPosition+1;
+      currentPosition=previousPosition;
+      differneceInPosition=0;
+    }
+  }
+  return inputString;
+}
