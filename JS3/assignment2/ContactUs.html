@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <title>ContactUs</title>
+    </head>
+  <body>
+    <table id="header" align="center" height="10%" width="90%">
+      <tr>
+        <td  width="97%"><img src="HTML logo.png" height="50px" width="50px" onclick="goToThisPage('Home.html')"/></td>
+
+        <td align="right"><a onclick="goToThisPage('Home.html')">Home</a></td>
+        <td align="right"><a onclick="goToThisPage('About.html')">About</a></td>
+        <td align="right"><a onclick="goToThisPage('Product.html')">Product</a></td>
+        <td align="right"><a onclick="goToThisPage('Gallery.html')">Gallery</a></td>
+        <td align="right"><a onclick="goToThisPage('ContactUs.html')">Contact</a></td>
+
+      </tr>
+    </table>
+
+      <hr>
+
+    <table id="cover_img" align="center" height="40%" width="90%">
+      <tr>
+        <td align="center"><img src="contact_us_banner1.jpg" height="40%" width="100%"></td>
+      </tr>
+    </table>
+
+    <form>
+    <table align="center">
+      <tr><td><label for="u_name">Name</label> <span>*</span></td>
+          <td><input type="text" id="u_name"  onblur="validateUserName(this);"></td>
+          <td><span><label for="u_name"></label></span></td>
+      </tr>
+
+      <tr><td><label for="u_email">Email</label> <span>*</span></td>
+          <td><input type="text" id="u_email" onblur="validateEmail(this);"></td>
+          <td><span><label for="u_email"></label></span></td>
+      </tr>
+
+      <tr><td><label for="city">City</label><span>*</span></td>
+          <td><select id="city" onchange="validateOption(this);">
+              <option value="" selected disabled></option>
+              <option value="Ajmer">Ajmer</option>
+              <option value="Bhilwara">Bhilwara</option>
+              <option value="Jaipur">Jaipur</option>
+              <option value="Udaipur">Udaipur</option>
+              </select></td>
+          <td><span><label for="city"></label></span></td>
+      </tr>
+      <tr><td colspan="2"><input type="text" id="city_selected" disabled></input></td></tr>
+
+      <tr><td><label for="u_org">Organisation Name</label><span>*</span></td>
+          <td><input type="text" id="u_org" onblur="validateOrganisationName(this);"></td>
+          <td><span><label for="u_org"></label></span></td>
+      </tr>
+
+      <tr><td><label for="u_number">Contact Number</label><span>*</span></td>
+          <td><input type="text" id="u_number" onblur="validateContactNumber(this);"></td>
+          <td><span><label for="u_number"></label></span></td>
+      </tr>
+
+      <tr><td><label for="u_message">Message</label><span>*</span></td>
+          <td><textarea id="u_message" cols="22" rows="2" onblur="validateMessage(this)"></textarea></td>
+          <td><span><label for="u_message"></label></span></td>
+      </tr>
+
+      <tr><td align="center"><button onclick="validateForm(); populateValues()">Submit Form</button></td>
+          <td align="center"><button onclick="clearFormDetails()">Clear Form</button></td>
+          <td><span id="invalid_submission"></span></td>
+      </tr>
+    </table>
+  </form>
+
+    <br><hr>
+    <table id="footer" align ="center" height="2%" width="90%">
+      <tr>
+        <td align="center"><p style="color: grey">@ Copyright 2016-17 | All Rights Reserved | Metacube Training</p></td>
+      </tr>
+    </table>
+  </body>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="LinkPage.js"></script>
+  <script type="text/javascript" src="Validate.js"></script>
+  <script type="text/javascript" src="LocalStorage.js"></script>
+</html>

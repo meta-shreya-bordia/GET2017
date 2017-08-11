@@ -1,0 +1,40 @@
+function isStorageAvailable(){
+  if (typeof(Storage) !== "undefined") {
+    return true;
+  }
+
+  alert("Storage is blocked");
+  return false;
+}
+
+var form_values ="form_details";
+
+function populateValues(){
+  if(!isStorageAvailable){
+    return;
+  }
+
+  var form_details = {};
+  var user_details = document.getElementsByTagName("form");
+
+  for(var detail=0; detail< user_details.elements.length; detail++){
+    form_details.user_details.elements[detail].labels[0].innerHTML = user_details.elements[detail];
+  }
+
+  localStorage.setItem(form_values, form_details);
+}
+
+function clearFormDetails(){
+  if(!isStorageAvailable){
+    return;
+  }
+
+  var form_details = {};
+  var user_details = document.getElementsByTagName("form");
+
+  for(var detail=0; detail< user_details.elements.length; detail++){
+    form_details.user_details.elements[detail] = "";
+  }
+
+  localStorage.setItem(form_values, null);
+}

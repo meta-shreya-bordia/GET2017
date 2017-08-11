@@ -1,0 +1,158 @@
+var linked_list = new SinglyLinked();
+
+(function(){
+  document.getElementById("AddAtBeginning").addEventListener("click", function(){performOperation(this);}, false);
+  document.getElementById("AddAtEndOfList").addEventListener("click", function(){performOperation(this);}, false);
+  document.getElementById("AddAtSpecifiedPosition").addEventListener("click", function(){performOperation(this);}, false);
+
+  document.getElementById("RemoveByElementValue").addEventListener("click", function(){performOperation(this);}, false);
+  document.getElementById("RemoveByElementPosition").addEventListener("click", function(){performOperation(this);}, false);
+
+  document.getElementById("SearchByElementValue").addEventListener("click", function(){performOperation(this);}, false);
+})();
+
+function performOperation(button_id){
+  var element = document.getElementById("element_value").value;
+  var place = document.getElementById("element_position").value;
+
+  //call appropriate method
+  switch(button_id.id){
+    case "AddAtBeginning":
+      linked_list.addToPositionInList(element, 0);
+      break;
+
+    case "AddAtEndOfList":
+      linked_list.addToPositionInList(element, linked_list.lengthOfList);
+      break;
+
+    case "AddAtSpecifiedPosition":
+      linked_list.addToPositionInList(element, place);
+      break;
+
+    case "RemoveByElementValue":
+      linked_list.removeElement(element);
+      break;
+
+    case "RemoveByElementPosition":
+      linked_list.removeElementFromPosition(place);
+      break;
+
+    case "SearchByElementValue":
+      linked_list.searchAnElement(element);
+      break;
+  }
+
+  document.body.appendChild(document.createElement("p").appendChild(document.createTextNode( JSON.stringify(linked_list) )));
+}
+
+/**
+Each node in the list contains data element
+and pointer to the next node
+*/
+function Node(data){
+  this.data = data;
+  this.next = null;
+}
+
+function SinglyLinked(){
+  this.lengthOfList = 0;
+  this.head = null;
+}
+
+var element_value, position;
+
+SinglyLinked.prototype.checkValidPosition = function(position){
+  try{
+    if(position === -1 || position < 0 || position > this.lengthOfList){
+      throw new Error('Index Out Of Bounds Exception');
+    }
+  }catch(e){
+    alert(e);
+    return false;
+  }
+
+  return true;
+}
+
+SinglyLinked.prototype.addToPositionInList = function(element_value, position){
+  var previous = null;
+  var current_node = this.head;
+  var iterate = 0;
+
+  //throw exception if position entered is either negative or larger than current list size
+  if(!this.checkValidPosition(position)){
+    return;
+  }
+
+  //add element to the list
+  var node = new Node(element_value);
+
+  //iterate to the specified position
+  while(current_node && iterate <= position){
+    previous = current_node;
+    current_node = current_node.next;
+    iterate++;
+  }
+
+  // if list is empty or insertion at first position
+  if(!previous){
+    node.next = this.head;
+    this.head = node;
+  }else{  //insertion at specific position
+    node.next = current_node;
+    previous.next = node;
+  }
+
+  this.lengthOfList++;
+}
+
+SinglyLinked.prototype.removeElementFromPosition = function(position){
+  var previous = null;
+  var current_node = this.head;
+  var list_position = 0;
+
+  //throw exception if position entered is either negative or larger than current list size
+  if(!this.checkValidPosition(position)){
+    return;
+  }
+
+  //iterate to position of element in the list
+  while(current_node.next && list_position <= position){
+    previous = current_node;
+    current_node = current_node.next;
+    list_position++;
+  }
+
+  //else, remove element
+  previous.next = current_node.next;
+  this.lengthOfList--;
+}
+
+SinglyLinked.prototype.removeElement = function(element_value){
+  var place = this.searchAnElement(element_value);
+  alert(place);
+  this.removeElementFromPosition(place);
+}
+
+SinglyLinked.prototype.searchAnElement = function(element_value){
+  var current_node = this.head;
+  var list_place = 0;
+
+  while(current_node && current_node.data != element_value){
+    current_node = current_node.next;
+    list_place++;
+  }
+
+  //if looping stops due to end of list traversal with element not being found
+  try{
+    if(!current_node){
+      throw new Error('Element does not belong to the list');
+    }
+  }catch(e){
+    alert(e);
+  }
+
+  //return position of element data match
+  alert("Element found at: "+list_place);
+  return list_place;
+}
