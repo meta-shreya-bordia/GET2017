@@ -1,0 +1,131 @@
+body{
+  margin:0%;
+  width:100%;
+  font-family: sans-serif;
+  background-color: #ECECEC;
+}
+.container{
+  padding: 0 30% 0 30%;
+  text-align: right;
+  border 2px solid red;
+}
+
+
+header h2{
+  padding:1%;
+  padding-bottom: 0.5%;
+  font-size: 120%;
+  border-bottom: 1px solid;
+	border-width:thin;
+	border-bottom-color:#ddd;
+}
+label{
+  padding-right: 4%;
+  font-size: 90%;
+  font-weight:bold;
+  text-align:right;
+}
+.fa {
+  border:1px solid #CCCCCC;
+  padding:1%;
+  padding-right:1.5%;
+  padding-left: 1.5%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.nameDetails input{
+  width:50%;
+  border:1px solid #CCCCCC;
+  padding-top:1.5%;
+  padding-left:2%;
+  padding-bottom:1%;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+
+}
+.nameDetails{
+  margin-bottom:3%;
+}
+.avs label{
+  text-align:right;
+
+}
+select{
+  width:50%;
+  border:1px solid #CCCCCC;
+  padding-top:1.5%;
+  padding-left:2%;
+  padding-bottom:1%;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.radio{
+  border:1px solid #CCCCCC;
+  width:58%;
+}
+.avss{
+  width:42%;
+}
+#hosting{
+    display:flex;
+
+}
+.radio-options{
+	 text-align:left;
+	 padding-left:2%;
+}
+.radio-options>input{
+	text-align:left;
+}
+
+textarea{
+  width:50%;
+  border:1px solid #CCCCCC;
+  padding-top:1.5%;
+  padding-left:2%;
+  padding-bottom:1%;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+
+}
+button .fa{
+  text-align: center;
+}
+
+button{
+	margin-right:32%;
+	border-radius:5px;
+	background-color:orange;
+	border:1px solid orange;
+	border-style:none;
+	color:white;
+	font-size:100%;
+  width:20%;
+	padding:7.5px 15px 7.5px 15px;
+}
+
+
+
+input:valid,
+input:in-range {
+    border:1px solid #CCCCCC;
+}
+
+input:invalid,
+input:out-of-range {
+    border-color:red;
+
+}
+
+input:placeholder-shown {
+	 border:1px solid #CCCCCC;
+}
+textarea{
+	margin-top:3%;
+}
+	
+#button{
+	margin-right:15%;
+	padding:0%;
+}

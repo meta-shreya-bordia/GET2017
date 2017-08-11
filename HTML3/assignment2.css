@@ -1,0 +1,201 @@
+body{
+  width: 100%;
+  margin: 0px;
+}
+
+.text{
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 100%;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+}
+
+#header{
+  background-color: #2D3E50;
+  color:white;
+
+  width:100%;
+  display:flex;
+}
+#header div{
+  padding: 2%;
+  width: 100%;
+}
+#header div ul{
+	list-style: none;
+	margin: 0%;
+  text-align: right;
+}
+#header div ul li{
+	display: inline-block;
+  margin-right: 2%;
+}
+#header div ul li a {
+	color: #6FBEF3;
+}
+#header div ul li a:hover{
+	color:white;
+}
+
+#cover_text{
+  padding: 10% 25% 7% 25%;
+  margin: 0px;
+  background-color: #1F8DD6;
+}
+.heading{
+  font-size: 300%;
+  margin: 5%;
+  padding: 5% 0% 5% 0%;
+
+  border: 3px solid white;
+  border-radius:5px;
+}
+.slogan{
+  padding: 1%;
+}
+.submit{
+  background-color: white;
+  color: #1F8DD6;
+
+  padding: 2.5% 0% 2.5% 0%;
+  margin: 4% 37% 0% 37%;
+  border-radius: 6px;
+}
+
+#cover_text .submit a:hover{
+  cursor:pointer;
+}
+
+.content_heading{
+  padding: 4% 0% 2% 0%;
+
+  font-weight: lighter;
+  color:#34495e;
+  font-size: 125%;
+}
+
+#options{
+  display: flex;
+  padding-bottom: 2%;
+}
+
+#options div{
+  padding: 0% 1% 4% 4%;
+}
+
+.option{
+  color: #1f8dd6;
+  text-align:left;
+}
+
+#options div p{
+  color: #7f8c8d;
+  text-align: left;
+}
+
+#image{
+  background-color: #2d3e50;
+  display: flex;
+  padding: 4% 10% 4% 4%;
+}
+
+#image div img{
+  max-width: 250px;
+  max-height: 400px;
+  padding: 5% 0px 4% 15%;
+
+  float: left;
+}
+
+#image div h2{
+  font-size: 140%;
+  font-weight: 400;
+
+  text-align: left;
+  padding: 0% 0% 4% 10%;
+}
+
+#image div p{
+  text-align: left;
+  font-size: 100%;
+  color: #aaa;
+
+  padding: 0% 0% 4% 10%;
+}
+
+#get_details h2{
+  color: #34495e;
+  font-weight: 400;
+
+  font-size: 110%;
+  padding: 4% 0% 4% 0%;
+}
+
+#parallel_divs{
+  display:flex;
+  padding:0% 0% 0% 4%;
+}
+
+#form_div{
+  display: block;
+  width: 34%;
+}
+
+#other_info{
+  text-align: left;
+}
+
+#get_details div form{
+  text-align: left;
+  width: 50%;
+  float: left;
+}
+
+#get_details div form label{
+  color: #34495e;
+  font-size: 100%;
+
+  padding: 1% 0% 2% 0%;
+}
+
+#get_details div form input{
+  border: 1px solid #ddd;
+  color: black;
+  font-size: 100%;
+  min-width: 40%;
+
+  padding: 1%;
+  margin: 2%;
+}
+
+#get_details div form button{
+  padding: 2% 1% 2% 1%;
+  margin: 2%;
+
+  border: none;
+  background-color: #1f8dd6;
+  color: white;
+  border-radius: 6px;
+
+  font-size: 100%;
+  font-family: sans-serif;
+}
+
+#other_info h4{
+  color: #34495e;
+}
+
+#other_info p{
+  color: #7f8c8d;
+}
+
+#footer{
+  background-color: #111;
+  color: #7f8c8d;
+
+  padding: 1%;
+}
