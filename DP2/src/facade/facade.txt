@@ -1,0 +1,5 @@
+1 call dao and pass to controller(to pass to view)
+2 perform validations and apply promotions
+3 exception handling
+4 handle invalids
+5 singleton class DP

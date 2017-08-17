@@ -1,0 +1,2 @@
+1 daofactory: access product list, product promotions and order promotions
+2 calls enum type for user display
