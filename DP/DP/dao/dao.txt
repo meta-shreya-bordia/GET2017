@@ -1,0 +1,5 @@
+1 db access and writes
+2 *include dao factory
+3 in memory access and write
+4 MySQL r/w
+5 product dao

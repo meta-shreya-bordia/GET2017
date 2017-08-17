@@ -1,0 +1,5 @@
+1 display input & display output classes
+2 menu driven
+3 editable cart
+4 call enums(status of product)
+5 create, update, delete and error functions
