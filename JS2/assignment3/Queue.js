@@ -12,16 +12,26 @@ function performOperation(button_id){
   //call appropriate method
   switch(button_id.id){
     case "Enqueue":
-      stack.enqueue(element);
+      queue.enqueue(element);
       break;
     case "Dequeue":
-      stack.dequeue();
+      queue.dequeue();
       break;
   }
 
-  var stack_elements = document.body.appendChild(document.createElement("p"));
-  stack_elements.id = "nodes_in_queue";
-  stack_elements.appendChild(document.createTextNode( JSON.stringify(stack) ) );
+  var queue_elements = document.body.appendChild(document.createElement("p"));
+  queue_elements.id = "nodes_in_queue";
+
+  //clear older list elements
+  queue_elements.innerHTML = "";
+
+  queue_elements.innerHTML = "Head: "+ linked_list.head.data + " Rear: "+ linked_list.rear.data + "<br>";
+
+  var current_node = linked_list.head;
+  while(current_node){
+    queue_elements.innerHTML += current_node.data + " -> ";
+    current_node = current_node.next;
+  }
 }
 
 function Node(data){
@@ -35,9 +45,10 @@ function LinkedQueue(){
 }
 
 LinkedQueue.prototype.isEmpty = function(){
-    if(!this.head !this.tail && this.head == this.rear){
-    return true;
+    if(!this.head){
+      return true;
     }
+
     return false;
 }
 
@@ -58,33 +69,38 @@ LinkedQueue.prototype.enqueue = function(element_value){
     return;
   }
 
+  var node = new Node(element_value);
   //inserting element to start of queue
-  if(isEmpty()){
-    var node = new Node(element_value);
+  if(queue.isEmpty()){
     node.next = this.head;
     this.head = node;
     this.rear = node;
+  }else{
+	  this.rear.next = node;
   }
+
+
 }
 
 /**@method  dequeue()
-remove the top of the stack from the linked list
+remove from the head of the queue from the linked list
 */
-LinkedStack.prototype.pop = function(){
-  // if stack is empty, no element can be retrieved
+LinkedQueue.prototype.dequeue = function(){
+  // if queue is empty, no element can be retrieved
   if(this.isEmpty()){
-    return;
+    alert("Empty Queue");
+    exit();
   }
 
-  //dereference the top element to remove from stack
-  var node = this.topOfStack;
-  this.topOfStack = this.topOfStack.previous;
+  //dereference the head element to remove from queue
+  var node = this.head;
+  this.head = this.head.next;
 
-  //Show popped element
+  //Show dequeued element
   /** To access all html tag textContent, use .innerHTML property. .value properties for containers like textbox and radio buttons*/
-  var popped_element = document.body.appendChild(document.createElement("h2"));
-  popped_element.id = "node_popped";
-  popped_element.appendChild( document.createTextNode( node.data ) );
+  var dequeue_element = document.body.appendChild(document.createElement("h2"));
+  dequeue_element.id = "node_dequeued";
+  dequeue_element.appendChild( document.createTextNode( node.data ) );
 
   return node;
 }

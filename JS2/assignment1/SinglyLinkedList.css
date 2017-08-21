@@ -1,6 +1,7 @@
 body{
     text-align: left;
     font-family: arial;
+    font-size: 20px;
 }
 
 div{
@@ -11,14 +12,12 @@ span{
   padding: 10px;
 }
 
-#node_dequeued{
-  font-size: 25px;
-  text-align: center;
-  color: red;
+#singly_list{
+    text-align: center;
+    color: green;
 }
 
-#nodes_in_queue{
-  font-size: 25px;
+#removed_element{
   text-align: center;
-  color: green;
+  color: red;
 }

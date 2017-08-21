@@ -55,7 +55,16 @@ function performOperation(button_id){
   }
 
   //type error of converting circular list to string
-  document.body.appendChild(document.createElement("p").appendChild(document.createTextNode( JSON.stringify(linked_list) )));
+  var print_list = document.getElementById("doubly_list");
+
+  //clear old list details
+  print_list.innerHTML = "";
+
+  var current_node = linked_list.head;
+  while(current_node){
+    print_list.innerHTML += current_node.data + " -> ";
+    current_node = current_node.next;
+  }
 }
 
 /**
@@ -64,9 +73,9 @@ and pointer to the next node and the node before it
 *used for easy insertion and deletion*
 */
 function Node(data){
-  this.data = data;
+  this.data     = data;
   this.previous = null;
-  this.next = null;
+  this.next     = null;
 }
 
 /**@method  DoublyLinked
@@ -77,7 +86,7 @@ head: points to start of list
 */
 function DoublyLinked(){
   this.lengthOfList = 0;
-  this.head = null;
+  this.head         = null;
 }
 
 /**@method  checkValidPosition
@@ -86,8 +95,8 @@ throw error onto alert box
 */
 DoublyLinked.prototype.checkValidPosition = function(position){
   try{
-    alert(isNaN(position));
-    if(isNaN(position)==false & position < 0 & position > this.lengthOfList){
+    alert(this.lengthOfList);
+    if(position < 0 || position > this.lengthOfList){
       throw new Error('Invalid position value');
     }
   }catch(e){
@@ -104,32 +113,35 @@ into appropriate position in the list
 return  updated linked list
 */
 DoublyLinked.prototype.addToPositionInList = function(element_value, position){
-  var current_node = this.head;
-  var iterate = 0;
-
   //throw exception if position entered is either negative or larger than current list size
   //check valid element value
-  if(!element_value | !this.checkValidPosition(position)){
+  alert(this.checkValidPosition(position));
+  if(!element_value & !this.checkValidPosition(position)){
     return;
   }
 
-  //add element to the list
   var node = new Node(element_value);
-
-  //iterate to the specified position
-  while(current_node && iterate <= position){
-    current_node = current_node.next;
-    iterate++;
-  }
-
-  // if list is empty or insertion at first position
-  if(!current_node || (current_node & !current_node.previous)){
-    node.next = this.head;
+  if( position == 0 ){  //empty list insertion: insertion at start of list
+    if(this.head != null){
+      node.next = this.head;
+    }
     this.head = node;
-  }else{  //insertion at specific position
-    node.next = current_node;
-    node.previous = current_node.previous;
-    current_node.previous = node;
+  }else{                //insert at position
+    var current_node = this.head;
+    var iterate = 1;
+
+    //iterate to the specified position
+    while(iterate < position){
+      current_node = current_node.next;
+      iterate++;
+    }
+    node.previous = current_node;
+    node.next=current_node.next;
+
+    if(current_node.next!= null){  //adding at end of list
+      current_node.next.previous = node;
+    }
+      current_node.next =node;
   }
 
   this.lengthOfList++;

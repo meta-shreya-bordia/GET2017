@@ -54,7 +54,17 @@ function performOperation(button_id){
       break;
   }
 
-  document.body.appendChild(document.createElement("p").appendChild(document.createTextNode( JSON.stringify(linked_list) )));
+  //print list elements
+  var print_list = document.getElementById("singly_list");
+
+  //clear old list details
+  print_list.innerHTML = "";
+
+  var current_node = linked_list.head;
+  while(current_node){
+    print_list.innerHTML += current_node.data + " -> ";
+    current_node = current_node.next;
+  }
 }
 
 /**@method  Node
@@ -71,13 +81,11 @@ function Node(data){
 constructor for creating singly linked list object
 lengthOfList: number of nodes in object
 head: points to start of list
-*/
+**/
 function SinglyLinked(){
   this.lengthOfList = 0;
   this.head = null;
 }
-
-var element_value, position;
 
 /**@method  checkValidPosition
 check if position for insertion is a valid position
@@ -86,7 +94,7 @@ throw error onto alert box
 SinglyLinked.prototype.checkValidPosition = function(position){
   try{
     if(position === -1 || position < 0 || position > this.lengthOfList){
-      throw new Error('Index Out Of Bounds Exception');
+      throw new Error('Invalid input position');
     }
   }catch(user_error){
     alert(user_error);
@@ -102,9 +110,9 @@ into appropriate position in the list
 return  updated linked list
 */
 SinglyLinked.prototype.addToPositionInList = function(element_value, position){
-  var previous = null;
-  var current_node = this.head;
-  var iterate = 0;
+  var previous      = null;
+  var current_node  = this.head;
+  var iterate       = 0;
 
   //throw exception if position entered is either negative or larger than current list size
   if(!this.checkValidPosition(position)){
@@ -115,9 +123,9 @@ SinglyLinked.prototype.addToPositionInList = function(element_value, position){
   var node = new Node(element_value);
 
   //iterate to the specified position
-  while(current_node && iterate <= position){
-    previous = current_node;
-    current_node = current_node.next;
+  while(current_node && iterate < position){
+    previous      = current_node;
+    current_node  = current_node.next;
     iterate++;
   }
 
@@ -126,8 +134,8 @@ SinglyLinked.prototype.addToPositionInList = function(element_value, position){
     node.next = this.head;
     this.head = node;
   }else{  //insertion at specific position
-    node.next = current_node;
-    previous.next = node;
+    node.next = current_node; // new inserted node pointer to point to current_at_position node
+    previous.next = node;  // previous node's pointer should point to new inserted node
   }
 
   this.lengthOfList++;
@@ -138,26 +146,41 @@ remove node from list is appropriate position and element value match to a node 
 (update previous node pointer to the next node pointer)
 return  list with node pointers updated
 node dereferenced is garbage collected (no memory leaks)
-*/
+**/
 SinglyLinked.prototype.removeElementFromPosition = function(position){
-  var previous = null;
-  var current_node = this.head;
+  var previous      = null;
+  var current_node  = this.head;
   var list_position = 0;
 
   //throw exception if position entered is either negative or larger than current list size
   if(!this.checkValidPosition(position)){
-    return;
+    exit(0);
   }
 
   //iterate to position of element in the list
-  while(current_node.next && list_position <= position){
+  while(current_node && list_position < position){
     previous = current_node;
     current_node = current_node.next;
     list_position++;
   }
 
-  //else, remove element
-  previous.next = current_node.next;
+  var removed_element = document.body.appendChild(document.createElement("p"));
+  removed_element.id = "removed_element";
+
+  removed_element.innerHTML += ""; //clear old element data
+  removed_element.innerHTML = current_node.data;
+
+  //removing from first position
+  if(!previous){
+    if(current_node.next != null){  //remove first element from list
+      this.head = current_node.next;
+    }else{  //when only one element in list
+      this.head = null;
+    }
+  }else{
+    previous.next = current_node.next;
+  }
+
   this.lengthOfList--;
 }
 
@@ -168,7 +191,6 @@ element deleted by removeElementFromPosition method
 */
 SinglyLinked.prototype.removeElement = function(element_value){
   var place = this.searchAnElement(element_value);
-  alert(place);
   this.removeElementFromPosition(place);
 }
 
@@ -179,8 +201,8 @@ if these match, an element exists in the list_placeotherwise, throw an Error
 return  first reference of data matched
 */
 SinglyLinked.prototype.searchAnElement = function(element_value){
-  var current_node = this.head;
-  var list_place = 0;
+  var current_node  = this.head;
+  var list_place    = 0;
 
   while(current_node && current_node.data != element_value){
     current_node = current_node.next;
