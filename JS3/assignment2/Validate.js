@@ -108,12 +108,15 @@ function validateMessage(user_message){
 }
 
 function validateForm(){
-  var form_validation = document.body.appendChild(document.createElement("p"));
-  if(testUserName("u_name") && testEmail("u_email") && testOption("city") && testOrganisationName("u_org") && testContactNumber("u_number") && testMessage("u_message")){
+  var user_form = document.getElementById("user_form").elements;
+  var form_validation = document.getElementById("invalid_submission");
+
+  if(validateUserName(user_form[0]) & validateEmail(user_form[1]) & validateOption(user_form[2]) & validateOrganisationName(user_form[4]) & validateContactNumber(user_form[5]) & validateMessage(user_form[6]) ){
+      alert("Successfully submitted");
       return showValid(form_validation);
   }
 
-  showError('Cannot submit form with invalid details', form_validation);
+  return showError('Cannot submit form with invalid details', form_validation);
 }
 
 /****** error handling *****/

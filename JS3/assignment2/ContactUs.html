@@ -24,7 +24,7 @@
       </tr>
     </table>
 
-    <form>
+    <form id="user_form">
     <table align="center">
       <tr><td><label for="u_name">Name</label> <span>*</span></td>
           <td><input type="text" id="u_name"  onblur="validateUserName(this);"></td>
@@ -63,9 +63,9 @@
           <td><span><label for="u_message"></label></span></td>
       </tr>
 
-      <tr><td align="center"><button onclick="validateForm(); populateValues()">Submit Form</button></td>
-          <td align="center"><button onclick="clearFormDetails()">Clear Form</button></td>
-          <td><span id="invalid_submission"></span></td>
+      <tr><td align="center"><button type="button" onclick="validateForm(); populateValues();">Submit Form</button></td>
+          <td align="center"><button type="button" onclick="clearFormDetails(); getLocalStorageValue()">Clear Form</button></td>
+          <td><span><label id="invalid_submission"></label></span></td>
       </tr>
     </table>
   </form>
