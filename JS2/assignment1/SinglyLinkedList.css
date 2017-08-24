@@ -1,0 +1,23 @@
+body{
+    text-align: left;
+    font-family: arial;
+    font-size: 20px;
+}
+
+div{
+  padding: 20px;
+}
+
+span{
+  padding: 10px;
+}
+
+#singly_list{
+    text-align: center;
+    color: green;
+}
+
+#removed_element{
+  text-align: center;
+  color: red;
+}

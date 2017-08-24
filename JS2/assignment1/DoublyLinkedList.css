@@ -1,0 +1,17 @@
+body{
+    text-align: left;
+    font-family: arial;
+}
+
+div{
+  padding: 20px;
+}
+
+span{
+  padding: 10px;
+}
+
+#doubly_list{
+	color: green;
+	text-align: center;
+}
