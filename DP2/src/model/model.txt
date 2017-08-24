@@ -1,0 +1,4 @@
+1 calls in dao
+2 access factory for creating objects
+3 2 sub-folders: in-memory (hashmap)
+	file r/w
