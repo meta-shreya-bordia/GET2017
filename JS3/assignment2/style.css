@@ -1,0 +1,27 @@
+a{
+  text-decoration: underline;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+body{
+  font-family: arial;
+}
+
+span{
+  color: red;
+  font-size: 16px;
+  width: 50%;
+}
+
+#city_selected{
+  display: none;
+  width: 80%;
+  text-align: center;
+}
+
+#city{
+  width: 70%;
+}
