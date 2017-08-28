@@ -1,6 +1,8 @@
 package assignment1;
 
-public class MyArrayList<E extends Object> implements IList<E>{
+//import org.apache.commons.lang3;
+
+public class MyArrayList<E extends Object> implements IList<E>, Comparable<E>{
 	private Object[] array_list;
 	private int total_elements;
 	private int size;
@@ -16,7 +18,7 @@ public class MyArrayList<E extends Object> implements IList<E>{
 		array_list = new Object[this.size];
 	}
 	
-	public void resize(){
+	private void resize(){
 		size *= 2;
 		Object[] copyTo = new Object[size];
 		for(int index = 0; index < size/2; index++){
@@ -60,6 +62,7 @@ public class MyArrayList<E extends Object> implements IList<E>{
 		shiftLeft(index);
 		
 		total_elements--;
+//		System.out.println(total_elements + " " + size());
 		return element;
 	}
 
@@ -70,13 +73,17 @@ public class MyArrayList<E extends Object> implements IList<E>{
 			return false;
 		}
 		
-		remove(position);
-		return true;
+		if ( remove(position) != null ){
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 	@Override
 	public void clear(){
 		array_list = new Object[DEFAULT_SIZE];
+		total_elements = 0;
 	}
 	
 	/**@method	get(index)
@@ -96,7 +103,7 @@ public class MyArrayList<E extends Object> implements IList<E>{
 	@Override
 	public int indexOf(E element){
 		for(int position = 0; position < total_elements; position++){
-			if(array_list[position] == element){
+			if( array_list[position].equals( element )){
 				return position;
 			}
 		}
@@ -122,10 +129,13 @@ public class MyArrayList<E extends Object> implements IList<E>{
 	 * time: O(n)
 	 **/
 	// ArrayList uses merge sort: O(n log n)
-	//applying linear sort
 	@Override
 	public <E extends Comparable<E>> void sort(){
+		if(size() == 0 || size() == 1){
+			return;
+		}
 		
+		this.mergeSort(0, size()-1);
 	}
 	
 	@Override
@@ -142,19 +152,19 @@ public class MyArrayList<E extends Object> implements IList<E>{
 	
 	//linear left shift
 	private void shiftLeft(int position){
-		for (int shift_element = position; shift_element < total_elements; shift_element++) {
+		for (int shift_element = position; shift_element < size(); shift_element++) {
 			array_list[shift_element] = array_list[shift_element+1];
 		}
 	}
 	
 	//linear right shift
 	private void shiftRight(int position){
-		for (int shift_element = total_elements; shift_element > position; shift_element--) {
+		for (int shift_element = size(); shift_element > position; shift_element--) {
 			array_list[shift_element] = array_list[shift_element + 1];
 		}
 	}
 	
-	private void mergeSort(int start_index, int end_index){
+	private <E extends Comparable<E>> void mergeSort(int start_index, int end_index){
 		if(start_index < end_index){
 			int middle = start_index + (end_index - start_index)/2;
 			
@@ -165,7 +175,7 @@ public class MyArrayList<E extends Object> implements IList<E>{
 	}
 	
 	
-	private void merge(int start_index, int middle, int end_index){
+	private <E extends Comparable<E>> void merge(int start_index, int middle, int end_index){
 		Object[] left_array = new Object[middle - start_index +1];
 		Object[] right_array= new Object[end_index - middle];
 		
@@ -183,7 +193,7 @@ public class MyArrayList<E extends Object> implements IList<E>{
 		int k = start_index;
 		
 		while(lindex < left_array.length && rindex < right_array.length) {
-			if( (left_array[lindex]).toString().compareTo(right_array[rindex].toString()) <= 0) {
+			if( ((Comparable<E>)left_array[lindex]).compareTo((E)right_array[rindex]) <= 0) {
 				array_list[k++] = left_array[lindex++];
 			}else {
 				array_list[k++] = right_array[rindex++];
@@ -197,5 +207,31 @@ public class MyArrayList<E extends Object> implements IList<E>{
 		while(rindex < right_array.length) {
 			array_list[k++] = right_array[rindex++];
 		}
+	}
+
+	@Override
+	public int compareTo(E element) {
+		System.out.println("call this");
+		
+		if(element == null) {
+			return 1;
+		}
+		
+		//if wrapper class or String class
+		if( element instanceof String ||
+				element instanceof Integer ||
+				element instanceof Double ||
+				element instanceof Boolean ||
+				element instanceof Character ||
+				element instanceof Float ||
+				element instanceof Long ||
+				element instanceof Byte ||
+				element instanceof Short ){
+			return this.compareTo(element); // call of appropriate class
+		}else {
+			
+		}
+		
+		return 0;
 	}
 }

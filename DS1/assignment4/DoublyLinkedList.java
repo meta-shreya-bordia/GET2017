@@ -1,22 +1,22 @@
 package assignment4;
 
-public class DoublyLinkedList implements IList{
+public class DoublyLinkedList<E extends Object> implements IList<E>{
 	private Node head;
-	private int total_elements;
+	private int total_elements = 0;
 	
 	public DoublyLinkedList(){
-		this.head = null;
+		this.head = new Node();
 	}
 	
 	@Override
-	public void add(int index, Object element) {
+	public void add(int index, E element) {
 		isValidIndex(index);
 		
 		Node add_node = new Node(element);
 		
 		//insertion at start of list
 		if(index == 0){
-			if(this.head != null){
+			if(this.head.data != null){
 				add_node.next = this.head;
 			}
 			this.head = add_node;
@@ -29,7 +29,7 @@ public class DoublyLinkedList implements IList{
 		Node current_node = this.head;
 		int iterator = 0;
 		
-		while(iterator < index){
+		while(iterator < index-1){
 			current_node = current_node.next;
 			iterator++;
 		}
@@ -41,6 +41,9 @@ public class DoublyLinkedList implements IList{
 		if(current_node.next != null){
 			current_node.next.previous = add_node;
 		}
+		
+		current_node.next = add_node;
+		total_elements++;
 	}
 
 	@Override
@@ -53,6 +56,8 @@ public class DoublyLinkedList implements IList{
 		//if element matches at head
 		if(index == 0) {
 			this.head = this.head.next;
+			total_elements--;
+			return true;
 		}
 		
 		while(iterator < index) {
@@ -73,7 +78,7 @@ public class DoublyLinkedList implements IList{
 	}
 
 	@Override
-	public boolean remove(Object element) {
+	public boolean remove(E element) {
 		if(this.head == null) {
 			throw new NullPointerException();
 		}
@@ -81,7 +86,7 @@ public class DoublyLinkedList implements IList{
 		Node current_node = this.head;
 		
 		//search the list
-		while(current_node != null & current_node.data != element) {
+		while(current_node != null && current_node.data != element) {
 			current_node = current_node.next;
 		}
 		
@@ -102,7 +107,7 @@ public class DoublyLinkedList implements IList{
 	}
 
 	@Override
-	public Object get(int index) {
+	public E get(int index) {
 		isValidIndex(index);
 		
 		Node current_node = this.head;
@@ -110,9 +115,10 @@ public class DoublyLinkedList implements IList{
 		
 		while(iterator < index) {
 			current_node = current_node.next;
+			iterator++;
 		}
 		
-		return current_node.data;
+		return (E)current_node.data;
 	}
 
 	// non-recursive
@@ -144,9 +150,7 @@ public class DoublyLinkedList implements IList{
 		//sort an empty list or if list has only one element
 		if(head == null || this.head.next == null) {
 			return;
-		}
-		
-		
+		}		
 	}
 	
 	public int size(){
@@ -154,8 +158,8 @@ public class DoublyLinkedList implements IList{
 	}
 	
 	private boolean isValidIndex(int index){
-		if(this.head== null || index < 0 || index > this.size()){
-			throw new IndexOutOfBoundsException();
+		if(this.head==null || index< 0 || index > this.size()+1){
+			throw new ArrayIndexOutOfBoundsException();
 		}
 		
 		return true;
