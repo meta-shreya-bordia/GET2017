@@ -1,0 +1,29 @@
+1	Andhra Pradesh
+2	Arunachal Pradesh
+3	Assam
+4	Bihar
+5	Goa
+6	Gujarat
+7	Haryana
+8	Himachal Pradesh
+9	Jammu & Kashmir
+10	Karnataka
+11	Kerala
+12	Madhya Pradesh
+13	Maharashtra
+14	Manipur
+15	Meghalaya
+16	Mizoram
+17	Nagaland
+18	Orissa
+19	Punjab
+20	Rajasthan
+21	Sikkim
+22	Tamil Nadu
+23	Tripura
+24	Uttar Pradesh
+25	West Bengal
+26	Chhattisgarh
+27	Uttarakhand
+28	Jharkhand
+29	Telangana
