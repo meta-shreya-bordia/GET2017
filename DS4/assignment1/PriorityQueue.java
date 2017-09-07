@@ -4,7 +4,7 @@ package assignment1;
  * Max Heap based on priority and sequence number(arrival number)
  **/
 public class PriorityQueue{
-	private int totalElements;				// Current count of elements in queue
+	private int totalElements = 0;			// Current count of elements in queue
 	private Job[] jobToAllocate;			// Priority Queue
 	private final int DEFAULT_SIZE = 10;	// Let the default size be 10: resize to fit jobs
 	private int size;
@@ -14,15 +14,7 @@ public class PriorityQueue{
 		jobToAllocate = new Job[size];
 	}
 	
-	/**@Method	setPriority()
-	 * The priority queue is sorted upon each addition of job
-	 * and upon completion of each job
-	 * by MAX HEAP: heapify on the basis of priority number
-	 **/
-	public void setPriority(){
-		/*TODO*/
-	}
-	
+/*******COMPUTATIONS********/
 	/**@Method	resize
 	 * increase queue size by resizing
 	 **/
@@ -39,13 +31,36 @@ public class PriorityQueue{
 		this.jobToAllocate = copyTo;
 	}
 	
+	/**@Method	isEmpty()
+	 * check if queue is empty
+	 * @return	type = boolean
+	 **/
+	private boolean isEmpty(){
+		return(this.totalElements == 0);
+	}
+	
 	/**@Method	size()
 	 * get total number of jobs in queue
+	 * @return	type = int
 	 **/
 	public int size(){
 		return this.totalElements;
 	}
+	
+	/**@Method	clear
+	 * clear queue after printing
+	 **/
+	public void clear(){
+		size = DEFAULT_SIZE;
+		jobToAllocate = new Job[size];
+	}
+	
 /*******PRIORITY QUEUE OPERATIONS***********/	
+	/**@Method	enqueue(Job addJob)
+	 * add a new job to the queue
+	 * if queue size is reached, resize array
+	 * then maxHeapify: re-order queue
+	 **/
 	public void enqueue(Job addJob){
 		if(size() == size){
 			resize();
@@ -57,41 +72,22 @@ public class PriorityQueue{
 		buildHeap();
 	}
 	
-	public Job dequeue(){
-		if(isEmpty()){
-			return null;
-		}
-		
-		return jobToAllocate[totalElements--];
-	}
-	
-	public Job[] getPriorityQueue(){
-		return this.jobToAllocate;
-	}
-	
-	public Job[] printQueue(){
-		return this.heapSort();
-	}
-	
-	private boolean isEmpty(){
-		return(this.totalElements == 0);
-	}
-	
 /***********HEAP METHODS***************/	
-	/**@Method	heapSort
-	 * first build the heap. Then sort it.
+	/**@Method	printQueue(heapSort)
+	 * print all queue elements
+	 * implements the heap sort algorithm
+	 * @return	type = Job array: max priority jobs are printed first
 	**/
-	private Job[] heapSort(){
+	//Time Complexity: O(n log(n))
+	public Job[] printQueue(){
 		if(this.isEmpty()){
 			return null;
 		}
 		
-		buildHeap();
-		
 		int numberOfJobs =0;
 		Job[] printJobs = new Job[size()];
 		
-		for(int lastIndex = size(); lastIndex > 0; lastIndex--){
+		for(int lastIndex = size()-1; lastIndex >= 0; lastIndex--){
 			Job swap = jobToAllocate[0];
 			jobToAllocate[0] = jobToAllocate[lastIndex];
 			jobToAllocate[lastIndex] = swap;
@@ -107,6 +103,8 @@ public class PriorityQueue{
 	
 	/**@Method	buildHeap()
 	 * rearrange array to form a max heap
+	 * compute max-heap only for parent nodes
+	 * (exclude all leaf nodes)
 	 **/
 	private void buildHeap(){
 		for(int startIndex = (size()/2)-1; startIndex >= 0; startIndex--){
@@ -114,6 +112,12 @@ public class PriorityQueue{
 		}
 	}
 	
+	/**@Method	maxHeapify(int parentIndex)
+	 * recursively check that the left & right child nodes do not have higher priority
+	 * than the parent node
+	 * Max Priority nodes are moved to the top of tree
+	 * When same priority, sort on the basis of sequence number(time of entry in the queue)
+	 **/
 	private void maxHeapify(int parentIndex){
 		int leftChild  = left(parentIndex);		//left child
 		int rightChild = right(parentIndex);	//right child
