@@ -5,7 +5,7 @@ public class Guest {
 	private int guestAge;
 	private int roomAlloted;
 	
-	private Guest() {
+	public Guest() {
 		
 	}
 	
@@ -26,6 +26,10 @@ public class Guest {
 		return guestAge;
 	}
 
+	public void setRoomAlloted(int roomNumber){
+		this.roomAlloted = roomNumber;
+	}
+	
 	public int getRoomAlloted() {
 		return roomAlloted;
 	}

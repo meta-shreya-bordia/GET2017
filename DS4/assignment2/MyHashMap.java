@@ -1,6 +1,6 @@
 package assignment2;
 
-public class MyHashMap<E extends Object, T extends Object> implements IMap<E, T>{
+public class MyHashMap<Integer, Guest> implements IMap<Integer, Guest>{
 	private Object[] mapping;
 	private int SIZE = 16;
 	
@@ -8,59 +8,41 @@ public class MyHashMap<E extends Object, T extends Object> implements IMap<E, T>
 		this.SIZE = 16;
 	}
 	
-	public MyHashMap(int numberOfRooms){
-		this.SIZE = numberOfRooms;
+	/**
+	 * set HashMap size as number of rooms in the guest house
+	 **/
+	public void setSize(int size){
+		this.SIZE = size;
+		mapping = new Object[SIZE];
 	}
 
-	/**
-	 * The java HashMap implementation takes default size = 16
-	 * and has initial load factor = 0.75 ( number of keys/ size of hash table)
-	 * .'. initially number of rooms = 12
-	 **/
-	// maintain load factor = 0.75
-	private int hashingFunction(int key) {
-		return (key%SIZE);
+	@Override
+	public Object[] getMap(){
+		return this.mapping;
 	}
 	
-	//should be O(1)
-	//currently: O(n)
 	@Override
 	public boolean containsKey(int key) {
-		for(Object map: mapping){
-			if(map.equals()){
-				return true;
-			}
-		}
-		return false;
-	}
-
-	//Framework implementation: O(1)
-	//current time: O(n)
-	@Override
-	public boolean containsValue(T value) {
-		for(Object map: mapping){
-			if(value.equals(map)){
-				return true;
-			}
+		if( mapping[key] != null ){
+			return true;
 		}
 		return false;
 	}
 
 	@Override
-	public T get(E arg0) {
-		// TODO Auto-generated method stub
-		return null;
+	public Guest get(int key) {
+		return (Guest)this.mapping[key];
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return ( size() ==0);
+		return ( size() ==0 );
 	}
-
+	
 	@Override
-	public T put(E key, T value) {
-		int hashKey = hashingFunction((int)key);
-		
+	public Guest put(Integer key, Guest value) {
+		mapping[(int)key] = value;
+		return value;
 	}
 
 	@Override

@@ -5,8 +5,6 @@ import java.util.*;
 public class GuestHouse {
 	private Scanner input;
 	private Controller controller;
-	private int numberOfRooms;
-	private int numberOfGuests;
 	
 /******ALLOCATION OPERATIONS******/	
 	private static GuestHouse service;
@@ -26,21 +24,7 @@ public class GuestHouse {
 		return service;
 	}
 	
-	//Program execution starts here
-	public void allocationService() {
-		Controller controller = new Controller();
-		
-		int numberOfRooms  = getTotalNumberOfRooms();
-		int numberOfGuests = getTotalNumberOfGuests(numberOfRooms);
-		
-		while(numberOfGuests > 0) {
-			printAllocatedRoom();
-			numberOfGuests--;
-		}
-	}
-	
 /********GUEST HOUSE DETAILS*********/	
-	
 	public int getTotalNumberOfRooms() {
 		System.out.println("Welcome to The Guest House"
 					+ "\nEnter Total Number of Rooms:");
@@ -52,29 +36,36 @@ public class GuestHouse {
 			totalRooms = input.nextInt();
 		}
 		
+		controller.setTotalNumberOfRooms(totalRooms);
 		return totalRooms;
 	}
 	
 	public void printAllocatedRoom(){
 		Guest toAllocate = getGuestDetails();
+		int roomNumber = controller.bookRoom(toAllocate);
+		System.out.println("You have been alloted room number: "+ roomNumber);
+	}
+	
+	public void printAllRoomDetails(){
+		Object[] roomDetails = controller.getRoomDetails();
 		
+		System.out.println("Room Number"
+						+ "\tGuest in Room"
+						+ "\tGuest Age");
+		for(int roomNumber=0; roomNumber < roomDetails.length; roomNumber++){
+			System.out.print(roomNumber+1);
+			
+			Guest guest = (Guest)roomDetails[roomNumber];
+			if(guest == null){
+				System.out.println("**Room Available**");
+			}else{
+				System.out.println("\t\t"+ guest.getGuestName()
+								 +"\t\t" + guest.getGuestAge());
+			}
+		}				
 	}
 	
 /*********GUEST DETAILS********/	
-
-	public int getTotalNumberOfGuests(int numberOfRooms){
-		System.out.println("Enter total number of guests to allocate rooms to:");
-		int numberOfGuests = input.nextInt();
-		
-		while(numberOfGuests<= 0 && numberOfGuests <= numberOfRooms) {
-			System.out.println("Invalid guest count."
-							+"\nEnter total number of guests to allocate rooms to:");
-			numberOfGuests = input.nextInt();
-		}
-		
-		return numberOfGuests;
-	}
-	
 	public Guest getGuestDetails() {
 		String guestName;
 		int guestAge;
@@ -87,7 +78,7 @@ public class GuestHouse {
 		System.out.println("Enter your Age:");
 		
 		guestAge = input.nextInt();
-		while( guestAge <= 0 && guestAge > 100) {
+		while( guestAge <= 0 || guestAge > 100) {
 			System.out.println("Please enter valid age details:");
 			guestAge = input.nextInt();
 		}
