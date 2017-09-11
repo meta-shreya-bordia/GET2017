@@ -24,8 +24,6 @@ and Others instead of F,S and O.
 */
 SELECT * FROM members;
 
-INSERT INTO members(member_name) VALUES('another_member');
-
 CREATE VIEW member_details
 AS
 SELECT member_id, member_name, IF(category = 'F', 'FACULTY', IF(category = 'S', 'STUDENT', IFNULL(category, 'OTHERS')) ) AS member_category
@@ -39,20 +37,22 @@ title, member name, category, issue date, due date and return
 date. If the books have not been returned, NULL should be
 displayed instead of return date.
 */
+SELECT * FROM books;
 SELECT * FROM book_issue;
 SELECT * FROM book_return;
 SELECT * FROM titles;
 
 CREATE VIEW book_issue_details
 AS
-SELECT subject_name, title_name, member_name, category, BI.issue_date, due_date, IFNULL(return_date, 'NULL') AS book_return_date
+SELECT BI.accession_number, subject_name, title_name, member_name, category, BI.issue_date, due_date, IFNULL(return_date, null) AS book_return_date
 FROM book_issue AS BI
 JOIN books AS B ON BI.accession_number = B.accession_number
 JOIN titles AS T ON B.title_id = T.title_id
 JOIN subjects ON subjects.subject_id = T.subject_id
 JOIN members AS M ON BI.member_id = M.member_id
-JOIN book_return AS BR ON BI.accession_number = BR.accession_number 
-					AND BI.member_id = BR.member_id 
-                    AND BI.issue_date = BR.issue_date;
+LEFT JOIN book_return AS BR ON BI.accession_number = BR.accession_number 
+                        AND BI.member_id = BR.member_id 
+                        AND BI.issue_date = BR.issue_date
+ORDER BY BI.accession_number;
                     
 SELECT * FROM book_issue_details;
