@@ -1,0 +1,44 @@
+package library_information_system;
+
+/**@Class	BookReturn
+ * maintain log of all the books returned
+ * from issue date
+ **/
+public class BookReturn {
+	private String issue_date;
+	private int accession_number;
+	private int member_id;
+	private String return_date;
+	
+	public BookReturn(String issue_date, int accession_number, int member_id, String return_date) {
+		super();
+		this.issue_date = issue_date;
+		this.accession_number = accession_number;
+		this.member_id = member_id;
+		this.return_date = return_date;
+	}
+	public String getIssueDate() {
+		return issue_date;
+	}
+	public void setIssueDate(String issue_date) {
+		this.issue_date = issue_date;
+	}
+	public int getAccessionNumber() {
+		return accession_number;
+	}
+	public void setAccessionNumber(int accession_number) {
+		this.accession_number = accession_number;
+	}
+	public int getMemberId() {
+		return member_id;
+	}
+	public void setMemberId(int member_id) {
+		this.member_id = member_id;
+	}
+	public String getDueDate() {
+		return return_date;
+	}
+	public void setDueDate(String return_date) {
+		this.return_date = return_date;
+	}
+}
