@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+  <head lang = "en">
+    <title>Bootstrap Assignment 1</title>
+    <meta charset = "utf-8">
+    <meta name  = "viewport" content = "width = device-width, initial-scale=1">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src = "bootstrap/js/bootstrap.min.js"></script>
+    <link href  = "bootstrap/css/bootstrap.min.css" rel = "stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+  <section id="header">
+    <div id="LOGO" class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <h3>LOGO</h3>
+          </div>
+          <div class="col-xs-2">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+            <span class="glyphicon glyphicon-user profile pull-right"></span>
+          </div>
+        </div>
+    </div>
+  </div>
+    <nav id="NAV-BAR" class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="collapse navbar-collapse pull-right" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">DASHBOARD</a></li>
+            <li><a href="#">UI ELEMENTS</a></li>
+            <li><a href="#">DATA TABLES</a></li>
+            <li><a href="#">FORMS</a></li>
+            <li><a href="#">LOGIN PAGE  </a></li>
+            <li><a href="#">BLANK PAGE  </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  </section>
+
+  <div class="container">
+    <section id= "BOARD">
+      <div id="DASHBOARD">
+        <h3>DASHBOARD<h3>
+      </div>
+
+      <div id="TEMPLATE"  class="alert-success">
+          This is a simple admin template that can be used for your small project or may be large projects. This is free for personal and commercial use.
+      </div>
+
+      <div id="OPTIONS" class="row">
+          <div  class="col-sm-3">
+            <div id="bell" class="well" data-toggle="modal" data-target="#modal1">
+              <div><span class="glyphicon glyphicon-bell notif"></span></div>
+              <hr>
+              <div>Notifications</div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div id="camera" class="well">
+              <span class="glyphicon glyphicon-camera notif"></span>
+              <hr>
+              <div>Photogallery</div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div id="favourite" class="well">
+              <span class="glyphicon glyphicon-heart notif"></span>
+              <hr>
+              <div>Favourites</div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 ">
+            <div id="volume" class="well">
+              <span class="glyphicon glyphicon-volume-up notif"></span>
+              <hr>
+              <div>Announcements</div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section id="panel">
+      <div id="PANELS" class="row">
+        <div id="FIRST-COLUMN" class="col-sm-6 col-xs-12">
+          <div id="ACTIVE-NOTICE-PANEL" class="panel panel-default">
+            <div class="panel-heading">
+              <span>Active Notice Panel</span>
+                <span class="pull-right box">
+                <span class="glyphicon glyphicon-cog"></span>
+                <span class="caret"></span>
+              </span>
+            </div>
+
+            <div class="panel-body">
+              <div class="panel-group">
+                <span id="text-icon" class="icon glyphicon glyphicon-align-left"></span>&nbsp;
+                <span>Lorem ipsum dolor sit amet</span>
+                <span><button type="button" class="btn btn-xs btn-warning">Just Now</button></span>
+              </div>
+              <hr>
+
+              <div class="panel-group">
+                <span id="info-icon" class="icon glyphicon glyphicon-info-sign"></span>&nbsp;
+                <span>Lorem ipsum dolor sit amet</span>
+                <span><button type="button" class="btn btn-xs btn-info">2 min chat</button></span>
+              </div>
+              <hr>
+
+              <div class="panel-group">
+                <span id="comment-icon" class="icon glyphicon glyphicon-comment"></span>&nbsp;
+                <span>Lorem ipsum dolor sit amet</span>
+                <span><button type="button" class="btn btn-xs btn-success">Go!</button></span>
+              </div>
+              <hr>
+
+              <div class="panel-group">
+                <span id="edit-icon" class="icon glyphicon glyphicon-edit"></span>
+                <span>Lorem ipsum dolor sit amet</span>
+                <button type="button" class="btn btn-xs btn-success">Let's have it</button>
+              </div>
+              <hr>
+
+            </div>
+
+            <div class="panel-footer">
+              <button type="button" class="btn btn-default btn-block">
+                <span class="glyphicon glyphicon-repeat"></span>&nbsp;Just A Small Footer Button
+              </button>
+            </div>
+
+          </div>
+          <hr>
+
+          <div id="LINKS">
+            <div>
+              <button id="facebook" type="button" class="btn btn-sm">
+                <i class="fa fa-facebook" aria-hidden="true"></i> Facebook
+              </button>
+              <button id="google" type="button" class="btn btn-sm">
+                <i class="fa fa-google-plus" aria-hidden="true"></i> Google
+              </button>
+              <button id="twitter" type="button" class="btn btn-sm">
+                <i class="fa fa-twitter" aria-hidden="true"></i> Twitter
+              </button>
+              <button id="linkedin" type="button" class="btn btn-sm">
+                <i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin
+              </button>
+            </div>
+          </div>
+          <hr>
+
+          <div id="STATUS" class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Ref. No.</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Delivery On</th>
+                  <th># #</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>#2501</td>
+                  <td>01/22/2015</td>
+                  <td><button type="button" class="btn btn-xs btn-info">300 USD</button></td>
+                  <td><button type="button" class="btn btn-xs btn-success">Delivered</button></td>
+                  <td>01/25/2015</td>
+                  <td><button type="button" class="btn btn-xs btn-danger">View</button></td>
+                </tr>
+
+                <tr>
+                  <td>#15091</td>
+                  <td>12/12/2014</td>
+                  <td><button type="button" class="btn btn-xs btn-danger">7000 USD</button></td>
+                  <td><button type="button" class="btn btn-xs btn-warning">Shipped</button></td>
+                  <td>01/25/2015</td>
+                  <td><button type="button" class="btn btn-xs btn-success">View</button></td>
+                </tr>
+
+                <tr>
+                  <td>#11291</td>
+                  <td>12/03/2014</td>
+                  <td><button type="button" class="btn btn-xs btn-warning">7000 USD</button></td>
+                  <td><button type="button" class="btn btn-xs btn-success">Delivered</button></td>
+                  <td>01/25/2015</td>
+                  <td><button type="button" class="btn btn-xs btn-primary">View</button></td>
+                </tr>
+
+                <tr>
+                  <td>#1808</td>
+                  <td>11/10/2014</td>
+                  <td><button type="button" class="btn btn-xs btn-success">2000 USD</button></td>
+                  <td><button type="button" class="btn btn-xs btn-info">Returned</button></td>
+                  <td>01/25/2015</td>
+                  <td><button type="button" class="btn btn-xs btn-danger">View</button></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="SECOND-COLUMN" class="col-sm-6 col-xs-12">
+          <div class="alert alert-danger">
+            This is a simple admin template that can be used for your small project or may be large projects. This is free for personal and commercial use.
+          </div>
+          <hr>
+
+          <div class="panel panel-success">
+            <div class="panel-heading alert-success">Compose New Message</div>
+
+            <div class="panel-body">
+              <form>
+                <div class="form-group">
+                  <label for="name">Enter Recepient Name:</label>
+                  <input type="text" class="form-control" id="user_name">
+                </div>
+
+              <div class="form-group">
+                <label for="subject">Enter Subject:</label>
+                <input type="text" class="form-control" id="subject">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Enter Message:</label>
+                <textarea class="form-control" id="message" rows="11" cols="20"></textarea>
+              </div>
+              <hr>
+
+              <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-envelope"></span> Send Message</button>
+              <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-tags"></span> Save To Drafts</button>
+            </form>
+          </div>
+
+          <div class="panel-footer">
+            <strong>Note:</strong>
+            Please note that we track all messages so don't send any spams.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="footer">
+    <div class="container-fluid">
+      <div class="container">© 2016 All rights reserved.</div>
+    </div>
+  </section>
+
+<!--MODAL 1-------------------------->
+<div id="modal1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+       <h4 class="modal-title">Notifications</h4>
+     </div>
+     <div class="modal-body">
+
+<!--CAROUSEL-->
+      <div id="my-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+        <div id="carousel1" class="item active">
+          <div>
+            <span id="text-icon" class="icon glyphicon glyphicon-align-left"></span>
+            <span>Lorem ipsum dolor sit amet ipsum dolor sit amet
+              <button type="button" class="btn btn-xs btn-warning hidden-xs" data-toggle="tooltip" data-placement="top" title="tooltip on the top" >Just Now</button>
+              <button type="button" class="btn btn-xs btn-warning visible-xs" data-toggle="tooltip" data-placement="right" title="tooltip on the right" >Just Now</button>
+            </span>
+          </div>
+
+          <div>
+            <span id="info-icon" class="icon glyphicon glyphicon-info-sign"></span>
+            <span>Lorem ipsum dolor sit amet ipsum dolor
+              <button type="button" class="btn btn-xs btn-info hidden-xs" data-toggle="tooltip" data-placement="top" title="tooltip on the top">2 min chat</button>
+              <button type="button" class="btn btn-xs btn-info visible-xs" data-toggle="tooltip" data-placement="right" title="tooltip on the right">2 min chat</button>
+            </span>
+          </div>
+
+          <div>
+            <span id="comment-icon" class="icon glyphicon glyphicon-comment"></span>
+            <span>Lorem ipsum dolor sit amet ipsum dolor sit
+                <button type="button" class="btn btn-xs btn-success hidden-xs" data-toggle="tooltip" data-placement="top" title="tooltip on the top" >Go!</button>
+                <button type="button" class="btn btn-xs btn-success visible-xs" data-toggle="tooltip" data-placement="right" title="tooltip on the right">Go!</button>
+              </span>
+          </div>
+
+          <div>
+            <span id="edit-icon" class="icon glyphicon glyphicon-edit"></span>
+            <span>Lorem ipsum dolor sit amet
+              <button type="button" class="btn btn-xs btn-success visible-xs" data-toggle="tooltip" data-placement="right" title="tooltip on the right">Let's have it</button>
+              <button type="button" class="btn btn-xs btn-success hidden-xs" data-toggle="tooltip" data-placement="top" title="tooltip on the top">Let's have it</button>
+          </div>
+
+        </div>
+
+        <div id="carousel2" class="item">
+          <div class="panel-group" id="accordian">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                  <div id="panel1" class="row" data-toggle="collapse" href="#collapse1" data-parent="#accordian" >
+                    <div class="col-xs-10"><h4 class="panel-title">Collapsible item#1</h4></div>
+                    <div class="col-xs-2">
+                      <span class="icon glyphicon glyphicon-plus"></span>
+                      <span class="icon glyphicon glyphicon-minus"></span>
+                    </div>
+                  </div>
+
+              </div>
+              <div id="collapse1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Donec venenatis turpis vitae elementum iaculis.
+                      Aliquam sodales porta erat eu euismod. Nullam sit amet condimentum orci.
+                      Phasellus malesuada nulla sit amet commodo luctus.
+                  </p>
+                </div>
+              </div>
+
+              <div class="panel-heading">
+                <div id="panel2" class="row" data-toggle="collapse" href="#collapse2" data-parent="#accordian">
+                  <div class="col-xs-10"><h4 class="panel-title">Collapsible item#2</h4></div>
+                  <div class="col-xs-2">
+                    <span class="icon glyphicon glyphicon-plus"></span>
+                    <span class="icon glyphicon glyphicon-minus"></span>
+                  </div>
+                </div>
+              </div>
+              <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Donec venenatis turpis vitae elementum iaculis.
+                      Aliquam sodales porta erat eu euismod. Nullam sit amet condimentum orci.
+                      Phasellus malesuada nulla sit amet commodo luctus.
+                  </p>
+                </div>
+              </div>
+
+              <div class="panel-heading">
+                  <div id="panel3" class="row" data-toggle="collapse" href="#collapse3" data-parent="#accordian">
+                    <div class="col-xs-10"><h4 class="panel-title">Collapsible item#3</h4></div>
+                    <div class="col-xs-2">
+                      <span class="icon glyphicon glyphicon-plus"></span>
+                      <span class="icon glyphicon glyphicon-minus"></span>
+                    </div>
+                  </div>
+
+              </div>
+              <div id="collapse3" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Donec venenatis turpis vitae elementum iaculis.
+                      Aliquam sodales porta erat eu euismod. Nullam sit amet condimentum orci.
+                      Phasellus malesuada nulla sit amet commodo luctus.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <ul class="nav nav-tabs row">
+            <li class="col-xs-3 active"><a data-toggle="tab" href="#tab1">Tab1</a></li>
+            <li class="col-xs-3"><a data-toggle="tab" href="#tab2">Tab2</a></li>
+            <li class="col-xs-3"><a data-toggle="tab" href="#tab3">Tab3</a></li>
+            <li class="col-xs-3"><a data-toggle="tab" href="#tab4">Tab4</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="tab1" class="tab-pane fade in active">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Donec venenatis turpis vitae elementum iaculis.
+                  Aliquam sodales porta erat eu euismod. Nullam sit amet condimentum orci.
+                  Phasellus malesuada nulla sit amet commodo luctus.
+              </p>
+            </div>
+            <div id="tab2" class="tab-pane fade">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Donec venenatis turpis vitae elementum iaculis.
+                  Aliquam sodales porta erat eu euismod. Nullam sit amet condimentum orci.
+                  Phasellus malesuada nulla sit amet commodo luctus.
+              </p>
+            </div>
+            <div id="tab3" class="tab-pane fade">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Donec venenatis turpis vitae elementum iaculis.
+                  Aliquam sodales porta erat eu euismod. Nullam sit amet condimentum orci.
+                  Phasellus malesuada nulla sit amet commodo luctus.
+              </p>
+            </div>
+            <div id="tab4" class="tab-pane fade">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Donec venenatis turpis vitae elementum iaculis.
+                  Aliquam sodales porta erat eu euismod. Nullam sit amet condimentum orci.
+                  Phasellus malesuada nulla sit amet commodo luctus.
+              </p>
+            </div>
+
+
+
+
+
+          </div>
+
+        <div class="">
+
+        </div>
+       </div>
+     </div>
+
+     <a class="left carousel-control" href="#my-carousel" data-slide="prev">
+       <span class="glyphicon glyphicon-chevron-left"></span>
+       <span class="sr-only">Previous</span>
+     </a>
+     <a class="right carousel-control" href="#my-carousel" data-slide="next">
+       <span class="glyphicon glyphicon-chevron-right"></span>
+       <span class="sr-only">Next</span>
+     </a>
+</div>
+     <!-- Indicators -->
+     <div class="modal-footer">
+       <ol class="carousel-indicators">
+         <li data-target="#my-carousel" data-slide-to="0" class="active"></li>
+         <li data-target="#my-carousel" data-slide-to="1"></li>
+         <li data-target="#my-carousel" data-slide-to="2"></li>
+       </ol>
+      </div>
+
+   </div>
+  </div>
+</div>
+
+</body>
+  <link href  = "style.css" rel = "stylesheet"/>
+  <script>
+  $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+  });
+  </script>
+</html>
