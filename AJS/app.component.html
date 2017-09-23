@@ -1,0 +1,33 @@
+<h1 class="container-fluid page-header text-uppercase text-center">{{title}}</h1>
+<product-detail [product] = "selectedProduct"></product-detail>
+
+<div class="container-fluid">
+    <ul class="list-group container">
+        <li class ="row list-group-item">
+            <span class="col-xs-3">Product Id</span>
+            <span class="col-xs-6">Product Name</span>
+            <span class="col-xs-3">Product Price</span>
+        </li>
+
+        <li *ngFor="let product of products"
+            [class.selected]="product === selectedProduct"
+            (click)="onSelect(product)"
+            class ="row list-group-item">
+            
+            <span class="col-xs-3">{{product.id}}</span>
+            <span class="col-xs-6">{{product.name}}</span>
+            <span class="col-xs-3">{{product.price}}</span>
+        </li>
+    </ul>
+</div>
+
+<div class="container" *ngIf="selectedProduct">
+    <div>You have selected: </div>
+    <div class="row selected-product">
+        <span class="col-xs-2">{{selectedProduct.id}}</span>
+        <span class="col-xs-6">{{selectedProduct.name}}</span>
+        <span class="col-xs-4">{{selectedProduct.price}}</span>
+    </div>
+    <hr>
+    <div>Enter Product Quantity: <input placeholder="Enter product quantity" /> </div>   
+</div>
