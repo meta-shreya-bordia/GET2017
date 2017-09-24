@@ -1,0 +1,270 @@
+/******SECTION 1 HEADER******/
+#LOGO{
+  background-color: #C36464;
+  color: white;
+}
+
+#LOGO .container{
+  padding: 10px;
+}
+
+#LOGO button{
+  padding: 0px;
+  margin: 5px;
+}
+
+.fa-bars{
+  font-size: 20px;
+  padding: 10px;
+  border: 0.5px solid BLACK;
+  background-color: #F0677C;
+}
+
+.profile{
+  padding: 20px;
+  background-color: #F0677C;
+  border-radius: 50%;
+}
+
+#NAV-BAR{
+  text-align: center;
+  min-height: 0px;
+  border: 0px;
+  margin-bottom: 20px;
+}
+
+.navbar-inverse .navbar-nav>.active>a{
+  background-color: #C36464;
+}
+
+#NAV-BAR a{
+  color: WHITE;
+}
+
+#NAV-BAR a:hover{
+  background-color: #C36464;
+  cursor: pointer;
+}
+
+#myNavbar{
+  padding: 0px;
+  margin: 0px;
+}
+
+/*******SECTION 2 BOARD*******/
+#BOARD{
+  margin-bottom: 2%;
+}
+
+#DASHBOARD{
+  text-transform: uppercase;
+  color: #F0677C;
+  border-bottom: 2px solid #F0677C;
+  margin-bottom: 5%;
+}
+
+#TEMPLATE{
+  padding: 1.5%;
+  margin-bottom: 2%;
+}
+
+/*BOARD NOTIFICATIONS*/
+#BOARD .well{
+  color: WHITE;
+  font-size: 20px;
+  text-align: center;
+}
+
+#bell{
+  background-color: #B9B739;
+}
+
+#camera{
+  background-color: #F94C4C;
+}
+
+#favourite{
+  background-color: #119C7E;
+}
+
+#volume{
+  background-color: #B739B9;
+}
+
+.notif{
+  padding: 5%;
+  border-radius: 50%;
+  border: 2px solid WHITE;
+}
+
+/*******SECTION 3 PANELS********/
+/**FIRST COLUMN**/
+
+/*ACTIVE NOTICE PANEL*/
+#PANELS{
+  margin-bottom: 2%;
+}
+
+.box{
+  background-color: #5CB85C;
+  color: white;
+  border-top: 1px solid #5CB84F;
+  padding: 1px 2px;
+}
+
+.icon{
+  padding: 5px;
+  border: 0.5px solid #EAEAEA;
+}
+
+#text-icon{
+  color: #3C763D;
+}
+
+#info-icon{
+  color: #A94442;
+}
+
+#comment-icon{
+  color: #8A6D3B;
+}
+
+#edit-icon{
+  color: #AB504E;
+}
+
+/*LINKS*/
+#LINKS{
+  border: 1px solid #FCF8D0;
+  background-color: #FCF8E3;
+  text-align: center;
+  color: WHITE;
+  margin-bottom: 10px;
+}
+
+#LINKS div{
+  padding: 20px;
+}
+
+#facebook{
+  background-color: #6279A7;
+}
+
+#google{
+  background-color: #CF573A;
+}
+
+#twitter{
+  background-color: #33BBEB;
+}
+
+#linkedin{
+  background-color: #3E90B4;
+}
+
+/*STATUS TABLE*/
+
+/**SECOND COLUMN**/
+#SECOND-COLUMN .alert-danger{
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+#SECOND-COLUMN .panel-footer{
+  color: #8C8C8C;
+}
+
+/******SECTION 4 FOOTER******/
+#footer{
+  padding: 20px;
+  background-color: #C36464;
+  color: white;
+}
+
+/******************MODAL***************/
+button.close {
+  position: relative;
+  background-color: white;
+  top: -20px;
+  right:-20px;
+  opacity: 1;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+#modal1 .modal-dialog{
+  position: fixed;
+  top: 150px;
+}
+
+#modal1 .modal-header{
+  color: WHITE;
+  background-color: #B8B739;
+}
+
+.item{
+  margin: 0px 20px;
+}
+
+.carousel-control{
+  width: 5%;
+  color: #B2B2B2;
+}
+
+.carousel-control.right{
+  background-image: none;
+}
+
+.carousel-control.left{
+  background-image: none;
+}
+
+#my-carousel{
+  height: 300px;
+}
+
+#carousel1 div{
+  border-bottom: 1px solid #EEE;
+}
+
+#carousel2 .panel-heading{
+  color: WHITE;
+  background-color: #009788;
+}
+
+.icon{
+    right: 10px;
+    padding: 5px;
+    color:  #009788;
+    background-color: WHITE;
+}
+
+.icon span{
+  display: block;
+}
+
+#carousel2 a{
+  text-decoration: none;
+  color: WHITE;
+}
+
+.carousel-indicators li{
+  background-color: #989898;
+  border: 1px solid #98989F;
+}
+
+.carousel-indicators .active{
+  background-color: BLACK;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+  font-weight: bold;
+}
+
+.modal-footer{
+  border-top: 0px;
+}
+
+.nav-tabs>li{
+  padding: 0px;
+}
