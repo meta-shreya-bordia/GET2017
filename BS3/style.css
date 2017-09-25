@@ -92,11 +92,11 @@
 }
 
 .notif{
-  padding: 5%;
+  padding: 15px;
   border-radius: 50%;
-  border: 2px solid WHITE;
+  border: 2px solid #EAEAEA;
+  font-size: 30px;
 }
-
 /*******SECTION 3 PANELS********/
 /**FIRST COLUMN**/
 
@@ -110,11 +110,6 @@
   color: white;
   border-top: 1px solid #5CB84F;
   padding: 1px 2px;
-}
-
-.icon{
-  padding: 5px;
-  border: 0.5px solid #EAEAEA;
 }
 
 #text-icon{
@@ -193,7 +188,6 @@ button.close {
 }
 
 #modal1 .modal-dialog{
-  position: fixed;
   top: 150px;
 }
 
@@ -206,6 +200,7 @@ button.close {
   margin: 0px 20px;
 }
 
+/*Controls*/
 .carousel-control{
   width: 5%;
   color: #B2B2B2;
@@ -218,12 +213,22 @@ button.close {
 .carousel-control.left{
   background-image: none;
 }
+/****/
 
 #my-carousel{
   height: 300px;
 }
 
+#my-carousel .carousel-inner{
+  padding: 0px;
+}
+
+#carousel1{
+  padding-top: 30px;
+}
+
 #carousel1 div{
+  padding: 10px;
   border-bottom: 1px solid #EEE;
 }
 
@@ -233,14 +238,13 @@ button.close {
 }
 
 .icon{
-    right: 10px;
-    padding: 5px;
+    padding: 3px;
     color:  #009788;
     background-color: WHITE;
 }
 
-.icon span{
-  display: block;
+#carousel2 p{
+  padding: 5px 0px 10px 10px;
 }
 
 #carousel2 a{
@@ -249,22 +253,23 @@ button.close {
 }
 
 .carousel-indicators li{
+  padding: 0px;
   background-color: #989898;
   border: 1px solid #98989F;
-}
-
-.carousel-indicators .active{
-  background-color: BLACK;
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
   font-weight: bold;
 }
 
-.modal-footer{
-  border-top: 0px;
+.tab-pane{
+    margin-top: 10px;
 }
 
 .nav-tabs>li{
   padding: 0px;
+}
+
+.carousel-indicators .active{
+  background-color: BLACK;
 }
