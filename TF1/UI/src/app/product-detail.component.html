@@ -1,0 +1,24 @@
+<div *ngIf="product">
+    <div class="DASHBOARD">{{product.name}} details!</div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4"><img [src] = "product.img" class="img-thumbnail"/></div>
+            
+            <div class="col-xs-8">
+                <h2><label class="label-info">Id: {{product.id}}</label></h2>
+                <div>Product Name:   <input [(ngModel)]="product.name" placeholder="name"/></div>
+                <div>Product Price:  <input [(ngModel)]="product.price" placeholder="price"/></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class= "container">
+    <div class="options">
+        <button (click)="save()" class="btn btn-success btn-md">Save</button>
+        <button (click)="back()" class="btn btn-danger btn-md">Back</button>
+    </div>
+</div>
