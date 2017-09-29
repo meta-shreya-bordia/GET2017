@@ -1,0 +1,16 @@
+<div id="search-component" class="container-fluid">   
+    <div class= "row text-center list group-item">
+        <span>Search for a Product:</span>   
+        <span class="search-box bloc"><input #searchBox type="text" id="search-box" (keyup)="search(searchBox.value)" />       
+            <span class="glyphicon glyphicon-search"></span>
+        </span>
+    </div>
+    
+    <ul class="list-group found-elements">
+        <li *ngFor="let product of products | async"
+            (click)="goToDetail(product)"
+            class="list-group-item search-result" >    
+            <span>{{product.name}} </span><span> {{product.price}} </span>  
+        </li>
+    </ul>
+</div>

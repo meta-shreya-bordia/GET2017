@@ -1,0 +1,13 @@
+.glyphicon-fire{
+  color: #FFA500;
+}
+
+a {
+  text-decoration: none;
+}
+
+.well:hover {
+  background-color: #EEE;
+  cursor: pointer;
+  color: #607d8b;
+}
