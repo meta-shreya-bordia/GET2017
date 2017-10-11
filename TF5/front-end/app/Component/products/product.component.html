@@ -1,0 +1,32 @@
+<div class="container">
+<div class="page-header">
+        <h3 align="center">Product List  <button type="button" class="btn btn-success pull-right" routerLink="/add"><span class="glyphicon glyphicon-plus"></span>Add Product</button></h3>
+       
+</div>
+        <a class="col-sm-3" style="text-decoration:none;" *ngFor="let product of products"
+        >
+        <div class="list-group">
+                        <div class="list-group-item active" align="center">{{product.id}}</div>
+                       <div class="list-group-item text-center"><table style="width:100%"><tbody><tr><th></th><td>{{product.name}}</td></tr></tbody></table></div>
+                      
+                       <div class="list-group-item text-center"><table style="width:100%"><tbody><tr>
+                               <td><button type="button" class="btn btn-info" [class.selected]="product === selectedProduct"
+                                (click)="onSelect(product)"><span class="glyphicon glyphicon-info-sign pull-right"></span></button></td>
+                               <td><button type="button" class="btn btn-warning"  [class.selected]="product === selectedProduct"
+                                (click)="onUpdate(product)"><span class="glyphicon glyphicon-edit pull-right"></span></button></td>
+                               <td><button type="button" class="btn btn-danger" [class.selected]="product === selectedProduct" (click)="onDelete(product)"><span class="glyphicon glyphicon-trash pull-right"></span></button></td>
+                               <td>
+                                <button class="btn btn-success btn-sm " [class.selected]="product === selectedProduct" (click) ="addToCart(product)" >
+                                        <span class="glyphicon glyphicon-shopping-cart"></span></button>
+                               </td>
+
+                               
+        
+                              </tr></tbody></table></div>
+                      </div>
+        </a>
+</div>
+
+
+
+      
