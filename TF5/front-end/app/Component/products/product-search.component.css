@@ -1,0 +1,22 @@
+.search-result{
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    width:300px;
+    background-color: white;
+    cursor: pointer;text-align: center;
+    } 
+.search-result div:hover{
+    color: #eee;
+    background-color: #607D8B;
+    }
+
+.glyphicon{
+    top: -2px;
+    position: absolute;
+    left: -10px;
+}
+
+#search-box{
+    width:300px;
+}

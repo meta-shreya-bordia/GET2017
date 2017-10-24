@@ -1,0 +1,17 @@
+<div class="text-center center-block
+3"  style="width:50%;" *ngIf="product">
+        <header class="w3-container w3-blue">
+          <h1>{{product.name}} </h1>
+        </header>
+      
+        <div class="w3-container">
+                <table class="w3-table-all">
+                    <tr><td>id :</td><td>{{product.id}}</td></tr>
+                    <tr><td>name :</td><td>{{product.name}}</td></tr>
+                    <tr><td>price :</td><td>{{product.price}}</td></tr>
+                    <tr><td align="center"><button type="button" class="btn  btn-danger" (click)="delete(product)">Delete</button></td>
+                    <td align="center"><button type="button" class="btn  btn-success" (click)="goBack()">Back</button>  </td>
+                </table>
+            </div>
+           
+      </div>
