@@ -1,0 +1,35 @@
+.glyphicon-earphone{
+  color: BLUE;
+}
+
+#LINKS{
+    border: 1px solid #FCF8D0;
+    background-color: #FCF8E3;
+    text-align: center;
+    color: WHITE;
+    margin-bottom: 10px;
+  }
+  
+  #LINKS div{
+    padding: 20px;
+  }
+  
+  #facebook{
+    background-color: #6279A7;
+  }
+  
+  #google{
+    background-color: #CF573A;
+  }
+  
+  #twitter{
+    background-color: #33BBEB;
+  }
+  
+  #linkedin{
+    background-color: #3E90B4;
+  }
+
+  btn{
+    margin-bottom: 20px;
+  }
