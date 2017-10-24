@@ -1,0 +1,12 @@
+<h1 class="container-fluid jumbotron text-left text-uppercase" >
+    <span><img [src]= "logo" class="img-responsive logo"></span>
+    <span>{{title}}</span>
+</h1>
+<div id="NAV-BAR" class="text-uppercase nav navbar-inverse">
+    <nav class="pull-right">
+        <a routerLink="/dashboard"    routerLinkActive="active">Dashboard |</a>
+        <a routerLink="/products"     routerLinkActive="active">View All Products |</a>
+        <a routerLink="/contact-us"   routerLinkActive="active">Contact Us</a>
+    </nav>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,44 @@
+<div class="DASHBOARD">
+    <span class="glyphicon glyphicon-shopping-cart"></span>
+    Products
+</div>
+
+<div *ngIf="selectedProduct">
+    <button class="btn btn-success" (click)="gotoDetail()">View {{selectedProduct.name}}</button>
+</div>
+
+<div class="container">
+    <button class="pull-right btn btn-primary" 
+            (click)="goToAddProduct()">
+        <span class="glyphicon glyphicon-plus"></span>
+            Add Product
+    </button>
+</div>
+
+<div class="container-fluid">
+    <ul  class="list-group">
+        <li id="product-list" class ="row list-group-item text-uppercase text-center">
+            <span class="col-xs-3">Product Image</span>                
+            <span class="col-xs-3">Product Id</span>
+            <span class="col-xs-3">Product Name</span>
+            <span class="col-xs-1">Product Price</span>
+        </li>
+    
+        <li *ngFor="let product of products"
+            [class.selected]="product === selectedProduct"
+            (click)="onSelect(product)"
+            class ="row list-group-item">
+            
+            <span class="col-xs-3"><img [src]= "product.img" /></span>                            
+            <span class="col-xs-3">{{product.id}}</span>
+            <span class="col-xs-3">{{product.name}}</span>
+            <span class="col-xs-2">{{product.price}}</span>
+        
+            <span class="col-xs-1">
+                <button (click)="delete(product);
+                                $event.stopPropagation()"
+                        class ="btn btn-default">x</button>
+            </span>
+        </li>
+    </ul>
+</div>

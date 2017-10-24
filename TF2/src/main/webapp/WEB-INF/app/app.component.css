@@ -1,0 +1,21 @@
+h1{
+  margin: 0px;
+  padding-left: 10px;
+  color: WHITE;
+  background-color: #1976D2;
+}
+
+.logo{
+  max-width: 50px;
+  max-height: 30px;
+}
+
+.navbar-inverse{
+  padding: 20px;
+  color: WHITE;
+}
+
+.nav a{
+  text-decoration: none;
+  color: WHITE;
+}
